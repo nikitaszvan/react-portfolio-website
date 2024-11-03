@@ -1,0 +1,72 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'Geist';
+    src: url('../assets/fonts/Geist[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('../assets/fonts/GeistMono[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat-VariableFont_wght.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* Media Queries */
+
+@media (max-width: 639px) { /* xs */
+
+}
+
+@media (min-width: 640px) { /* s */
+
+}
+
+@media (min-width: 768px) { /* md */
+
+}
+
+@media (min-width: 1024px) { /* lg */
+
+}
+
+@media (min-width: 1280px) { /* xl */
+
+}
+
+@media (min-width: 1536px) { /* 2xl */
+
+}
+
+button {
+    font-family: 'Geist';
+}
+
+:root {
+    --bg: #ffffff;
+    --accent-color: #2962ff;    /* blue A700 */
+    --base-color: #e3f2fd;      /* blue 50 */
+    --border-color: #bbdefb;    /* blue 100 */
+    --black: #121212;
+    --black-muted: #1F2937;
+    --black-muted-softer: #4B5563;
+}
+
+[data-theme='dark'] {
+    --bg: #121212;          /* Dark background */
+    --accent-color: #0039cb;     /* Lightened blue for contrast */
+    --base-color: #0d47a1;       /* Darker base color */
+    --border-color: #424242;
+    --black: #F5F5F5;      /* Dark gray for borders */
+    --black-muted: #e0e0e0;      /* Muted white for text */
+    --black-muted-softer: #b0bec5;
+}

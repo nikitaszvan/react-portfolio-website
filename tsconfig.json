@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "baseUrl": ".",
+      "target": "ES6",             
+      "module": "ESNext",                   
+      "moduleResolution": "node",   
+    }
+  }
+  
