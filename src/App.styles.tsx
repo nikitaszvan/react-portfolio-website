@@ -11,7 +11,8 @@ export const MainContentContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
     margin-inline: auto;
+    margin-top: 4.5rem;
     width: 50rem;
 `

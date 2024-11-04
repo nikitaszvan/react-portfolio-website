@@ -2,14 +2,12 @@ import {
     AccentBorder,
     CardHeader,
     HeaderText,
-    IconContainer,
+    // IconContainer,
     ImageContainer,
     MainCard,
     StyledTestimonialCard
 } from "./TestimonialsCard.styles";
 import { Link } from "react-router-dom";
-
-import { ReactComponent as QuoteIcon } from "src/assets/svgs/QuoteIcon.svg";
 import { ReactComponent as ChevronRight } from "src/assets/svgs/ChevronRight.svg";
 
 
@@ -32,9 +30,9 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial; ind
           <CardHeader>
             <ImageContainer>
               <img src='https://i.pravatar.cc/300' alt={testimonial.name} />
-              <IconContainer>
+              {/* <IconContainer>
                 <QuoteIcon/>
-              </IconContainer>
+              </IconContainer> */}
             </ImageContainer>
             <HeaderText>
                 <h3>{testimonial.name}</h3>
@@ -48,7 +46,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial; ind
           <Link
                 to={testimonial.link}
             >
-                Read Full Testimonial
+                Read Full
                 <ChevronRight/>
             </Link>
         </MainCard>

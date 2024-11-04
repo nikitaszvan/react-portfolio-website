@@ -56,18 +56,22 @@ const AboutMeSection = forwardRef((props, ref) => {
             <span><LightingOutline/><h2>Development Skills</h2></span>
             {techStacks.map((stack, index) => (
                 <TechStackContainer>
-                    <TechStackHeader>
+                    <TechStackHeader isExpanded={expandedStack === index}>
+                        <h3>{stack.name}</h3>
                         <TechStackIcon>
                             {stack.icon}
                         </TechStackIcon>  
-                        <h3>{stack.name}</h3>
                         <ToggleDetailsButton
                             onClick={() => setExpandedStack(expandedStack === index ? null : index)}
                         >
-                            {/* {expandedStack === index ? "Hide Details" : "Show Details"} */}
                             <StyledChevronRight rotateArrow={expandedStack === index ? true : false}/>
                         </ToggleDetailsButton>
                     </TechStackHeader>
+                    {expandedStack === index && (
+                    <p id={`stack-content-${index}`} className="mt-3 text-sm text-gray-600">
+                        {stack.description}
+                    </p>
+                    )}
                     <TagsContainer>
                         {stack.technologies.map((tech, techIndex) => (
                             <span key={techIndex}>
@@ -75,11 +79,7 @@ const AboutMeSection = forwardRef((props, ref) => {
                             </span>
                         ))}
                     </TagsContainer>
-                    {expandedStack === index && (
-                    <p id={`stack-content-${index}`} className="mt-3 text-sm text-gray-600">
-                        {stack.description}
-                    </p>
-                    )}
+                    
                 </TechStackContainer>
             ))}
             <ExpandButton

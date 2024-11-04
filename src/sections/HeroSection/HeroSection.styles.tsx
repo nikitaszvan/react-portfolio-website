@@ -10,7 +10,7 @@ export const HeroImage = styled.img`
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
-    border: 0.2rem solid var(--accent-color);
+    border: 0.25rem solid var(--accent-color);
 `
 
 export const HeroTextContainer = styled.div`

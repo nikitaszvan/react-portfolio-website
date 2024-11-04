@@ -4,7 +4,8 @@ import {
     StyledTestimonialsSection
  } from "./TestimonialsSection.styles";
 
-import { ReactComponent as StarOutline } from "src/assets/svgs/StarOutline.svg";
+
+ import { ReactComponent as QuoteIcon } from "src/assets/svgs/QuoteIcon.svg";
 
 import { forwardRef } from "react";
 
@@ -41,7 +42,7 @@ const testimonials: Testimonial[] = [
 const TestimonialsSection = forwardRef((props, ref) => {
   return (
     <StyledTestimonialsSection id="testimonials" ref={ref}>
-        <span><StarOutline/><h2>Testimonials</h2></span>
+        <span><QuoteIcon/><h2>Testimonials</h2></span>
         <CardsContainer>
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={testimonial.id} testimonial={testimonial} index={index} />

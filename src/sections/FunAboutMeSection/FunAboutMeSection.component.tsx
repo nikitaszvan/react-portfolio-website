@@ -2,8 +2,8 @@ import { useState, forwardRef } from 'react';
 import { ReactComponent as Croissant } from "../../assets/svgs/Croissant.svg";
 import { ReactComponent as Camera } from "../../assets/svgs/Camera.svg";
 import { ReactComponent as Prawn } from "../../assets/svgs/Prawn.svg";
-import { ReactComponent as Lake } from "../../assets/svgs/Lake.svg";
-import { ReactComponent as SunOutline } from "../../assets/svgs/SunOutline.svg";
+import { ReactComponent as Camping } from "../../assets/svgs/Camping.svg";
+import { ReactComponent as PaperPlane } from "../../assets/svgs/PaperPlane.svg";
 import { 
     HobbiesContainer,
     HobbyColumn,
@@ -41,7 +41,7 @@ const FunAboutMeSection = forwardRef((props, ref) => {
           images: [ filmCamera, boatsHarbour, parasolsWindow ]
         },
         { 
-          icon: Lake, 
+          icon: Camping,
           label: 'Nature Lover',
           images: [ campsite, hiking, canoe ]
         },
@@ -55,7 +55,7 @@ const FunAboutMeSection = forwardRef((props, ref) => {
   return (
 
     <StyledFunAboutMe id="fun" ref={ref}>
-        <span><SunOutline/><h2>Fun</h2></span>
+        <span><PaperPlane/><h2>Fun</h2></span>
         <StyledHeader>
             <h2>When I'm Not Coding...</h2>
             <p>Here's a glimpse into my world outside of work</p>

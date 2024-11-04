@@ -8,8 +8,8 @@ import {
     StyledSideNavigation
     } from "./SideNavigation.styles";
 
-import { ReactComponent as GithubIcon } from "../../assets/svgs/GitHub.svg";
-import { ReactComponent as LinkedIn } from "../../assets/svgs/LinkedIn.svg";
+import { ReactComponent as GitHubOutline } from "../../assets/svgs/GitHubOutline.svg";
+import { ReactComponent as LinkedInOutline } from "../../assets/svgs/LinkedInOutline.svg";
 import { ReactComponent as Envelope } from "../../assets/svgs/Envelope.svg";
 
 type SideNavigationProps = {
@@ -20,19 +20,6 @@ type SideNavigationProps = {
 
 const SideNavigation: React.FC<SideNavigationProps> = ({ sectionRefs }) => {
   const [activeSection, setActiveSection] = useState('');
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const savedMode = localStorage.getItem('darkMode');
-    return savedMode === 'true' || (!savedMode && window.matchMedia('(prefers-color-scheme: dark)').matches);
-  });
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
-    localStorage.setItem('darkMode', String(isDarkMode));
-  }, [isDarkMode]);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(prevMode => !prevMode);
-  };
 
   useEffect(() => {
     const observerOptions = {
@@ -66,28 +53,31 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ sectionRefs }) => {
     sectionRefs[sectionId].current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const sections = ["Home", "About", "Fun", "Projects", "Experience", "Testimonials"];
+
   return (
     <StyledSideNavigation>
         <NavLinkContainer>
-            {["Home", "About", "Fun", "Projects", "Experience", "Testimonials"].map((link, index) => 
+            {sections.map((link, index) => 
                 <NavLink 
                   key={index} 
                   to={`#${link}`} 
                   isActive={activeSection === link.toLowerCase()}
+                  activeIndex={sections.map(section => section.toLowerCase()).indexOf(activeSection)}
                   onClick={() => scrollToSection(`${link.toLowerCase()}`)}
                 >
                   {link} 
                 </NavLink>
             )}
           </NavLinkContainer>
-            <SocialsContainer>
-            {[{icon: <GithubIcon/>, link:"https://github.com"}, {icon: <LinkedIn/>, link:"https://linkedin.com"}, 
+            {/* <SocialsContainer>
+            {[{icon: <GitHubOutline/>, link:"https://github.com"}, {icon: <LinkedInOutline/>, link:"https://linkedin.com"}, 
             {icon: <Envelope/>, link:"mailto:nikitaszvan@gmail.com"}]
             .map(({icon, link}, index) => 
-                <SocialLink key={index} to={link}>{icon}</SocialLink>      
+                <SocialLink key={index} to={link}>{icon}</SocialLink>
             )}
             </SocialsContainer>
-            <button onClick={toggleDarkMode}>Toggle mode</button>
+            <button onClick={toggleDarkMode}>Toggle mode</button> */}
      </StyledSideNavigation>
   )
 }

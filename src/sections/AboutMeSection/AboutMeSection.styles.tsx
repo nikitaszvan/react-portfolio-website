@@ -4,7 +4,7 @@ import { ReactComponent as ChevronRight} from "../../assets/svgs/ChevronRight.sv
 export const StyledAboutMeSection = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.7rem;
     padding-top: 1rem;
 
     > * {
@@ -18,6 +18,7 @@ export const StyledAboutMeSection = styled.div`
 
         > svg {
             height: 100%;
+            color: var(--accent-color);
         }
 
         > h2 {
@@ -45,6 +46,9 @@ export const TechStackContainer = styled.div`
 
     > p {
         display: inline-flex;
+        margin: 0;
+        margin-block: 0.4rem;
+        margin-bottom: 0.8rem;
     }
 `
 
@@ -52,38 +56,42 @@ export const TechStackIcon = styled.div`
     height: 90%;
     aspect-ratio: 1/1;
     background-color: transparent;
-    margin-right: 0.75rem;
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: auto;
 
     > svg {
-        width: 90%; 
+        width: 90%;
+        color: var(--accent-color);
+
     }
 `
 
-export const TechStackHeader = styled.div`
+export const TechStackHeader = styled.div<{ isExpanded: boolean }>`
     overflow: hidden;
-    transition: all 0.3s;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    ${(props => !props.isExpanded && 'border-bottom: 0.5px solid var(--border-color)')};
+
 
     > svg {
-       height: 60%;
+       height: 80%;
        aspect-ratio: 1/1;
     }
 
     > h3 {
-        font-size: 1.125rem;
+        font-size: 1.3rem;
         font-weight: 600;
         color: var(--black-muted);
         margin: 0;
-        margin-right: auto;
         line-height: 1.75rem;
+        margin-right: 0.75rem;
     }
+
 `
 
 export const ToggleDetailsButton = styled.button`
@@ -106,11 +114,6 @@ export const ToggleDetailsButton = styled.button`
     padding-right: 0.75rem;
     border: none;
     cursor: pointer;
-  
-    &:hover {
-        transition: background-color 0.2s;
-        background-color: rgba(235, 240, 255, 1);
-    }
 `
 
 export const StyledChevronRight = styled(ChevronRight)<{rotateArrow: boolean}>`
@@ -128,8 +131,8 @@ export const TagsContainer = styled.div`
     gap: 0.5rem;
 
     > span {
-        color: var(--accent-color);
-        font-weight: 500;
+        color: var(--black-muted);
+        font-weight: 400;
         font-size: 0.8rem;
         line-height: 1rem;
         padding: 0.125rem 0.625rem;
@@ -163,7 +166,7 @@ export const ExpandButton = styled.button`
         color: var(--black);
 
         > * {
-            fill: black;
+            fill: var(--black);
         }
     }
 `

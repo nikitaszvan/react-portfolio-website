@@ -5,7 +5,7 @@ export const StyledExperienceSection = styled.section`
     margin-inline: auto;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     padding-top: 1rem;
 
     > span {
@@ -14,8 +14,9 @@ export const StyledExperienceSection = styled.section`
         gap: 0.7rem;
 
         > svg {
-            height: 1.6rem;
+            height: 2rem;
             width: auto;
+            fill: var(--accent-color);
         }
 
         > h2 {
@@ -23,12 +24,16 @@ export const StyledExperienceSection = styled.section`
             font-weight: 600;
             text-align: center;
             margin: 0;
+            color: var(--black-muted);
         }
     }
 `
 
 export const CardsContainer = styled.div`
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
 
     > div:last-of-type {
         padding-bottom: 0; 
@@ -79,7 +84,6 @@ export const Circle = styled.div<{ translateDown: boolean }>`
 `
 
 export const JobHistoryCard = styled.div`
-    background-color: rgb(255 255 255 / 50%);
     backdrop-filter: blur(4px);
     padding: 1.5rem;
     border-radius: calc(0.5rem + 4px);
@@ -113,13 +117,13 @@ export const TextHeaderContainer = styled.div`
 
     > h3 {
         font-weight: 600;
-        font-size: 1.125rem;
+        font-size: 1.3rem;
         line-height: 1.75rem;
         color: var(--accent-color);
     }
 
     > p {
-        color: rgb(24 24 27);
+        color: var(--black);
         font-weight: 500;
         font-family: 'Montserrat';
     }
@@ -132,7 +136,7 @@ export const TextHeaderContainer = styled.div`
 
         > * {
             margin: 0;
-            color: #4B5563;
+            color: var(--black-muted);
         }
 
         > svg {
@@ -153,7 +157,7 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
     position: relative;
 
     > p {
-        color: rgb(113 113 122);
+        color: var(--gray-p);
         line-height: 1.625;
         
         ${(props => !props.expandedJob && 
@@ -169,11 +173,9 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
     > button {
         transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
         color: var(--accent-color);
-        font-size: 0.875rem;
+        font-size: 0.9rem;
         line-height: 1.25rem;
         font-weight: 500;
-        padding: 0.5rem 0.7rem;
-        border-radius: 0.5rem;
         gap: 0.25rem;
         align-items: center;
         display: flex;
@@ -181,10 +183,7 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
         cursor: pointer;
         border: none;
         background-color: transparent;
-
-        &:hover {
-            background-color: var(--base-color)
-        }
+        padding: 0;
     }
 
 `

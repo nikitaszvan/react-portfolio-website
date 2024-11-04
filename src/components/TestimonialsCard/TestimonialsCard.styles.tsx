@@ -14,7 +14,6 @@ export const fadeInUp = keyframes`
 export const StyledTestimonialCard = styled.div`
     background-color: var(--bg);
     border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -22,6 +21,11 @@ export const StyledTestimonialCard = styled.div`
     padding: 2rem;
     animation: ${fadeInUp} 0.5s forwards;
     height: fit-content;
+    border: 1px solid var(--border-color);
+
+    &:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
 `
 
 export const AccentBorder = styled.div`
@@ -44,7 +48,7 @@ export const MainCard = styled.div`
         margin: 0;
 
         > p {
-            color: rgb(75 85 99);
+            color: var(--gray-p);
             font-style: italic;
             line-height: 1.625;
             margin: 0;
@@ -52,10 +56,12 @@ export const MainCard = styled.div`
     }
 
     > a {
+        margin-top: 1rem;
         display: inline-flex;
         align-items: center;
         color: var(--accent-color); 
         text-decoration: none;
+        font-weight: 500;
 
         > svg {
             width: 0.7rem;
@@ -71,7 +77,7 @@ export const CardHeader = styled.div`
     top: 0.5rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     height: 5rem;
     margin-bottom: 0.5rem;
 `
@@ -80,34 +86,37 @@ export const ImageContainer = styled.div`
     position: relative;
 
     > img {
-        height: 5rem;
-        width: 5rem;
+        height: 5.5rem;
+        width: 5.5rem;
         border-radius: 50%;
-        border: 0.2rem solid var(--bg);
+        border: 0.3rem solid var(--bg);
         box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     }
 `
 
-export const IconContainer = styled.div`
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    padding: 0.25rem;
-    aspect-ratio: 1/1;
-    display: flex;
-    align-items: center;
+// export const IconContainer = styled.div`
+//     position: absolute;
+//     bottom: 0;
+//     right: 0;
+//     background-color: transparent;
+//     border-radius: 50%;
+//     padding: 0.25rem;
+//     aspect-ratio: 1/1;
+//     display: flex;
+//     align-items: center;
 
-    > svg {
-        width: 1rem;
-        height: 1rem;
-        color: var(--bg); 
-    }
-`
+//     > svg {
+//         width: 1rem;
+//         height: 1rem;
+//         color: var(--accent-color); 
+//     }
+// `
 
 export const HeaderText = styled.div`
     margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
 
     > * {
         margin: 0;
@@ -116,16 +125,22 @@ export const HeaderText = styled.div`
     > h3 {
         font-size: 1.25rem;
         font-weight: 600;
-        color: rgb(75 85 99); 
+        var(--black-muted-softer);
     }
 
     > p {
         font-size: 0.875rem;
-        color: rgb(75 85 99); 
+        var(--black-muted-softer);
+    }
+
+    > p:nth-of-type(1) {
+        font-family: 'Montserrat'; 
     }
 
     > p:nth-of-type(2) {
         color: var(--accent-color);  
+        letter-spacing: 0.08rem;
+        font-weight: 500;
     }
 `
 

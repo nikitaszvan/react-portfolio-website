@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledProjectsSection = styled.section`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     padding-top: 1rem;
 
     > span {
@@ -15,6 +15,7 @@ export const StyledProjectsSection = styled.section`
         > svg {
             height: 1.6rem;
             width: auto;
+            fill: var(--accent-color);;
         }
 
         > h2 {
@@ -22,6 +23,7 @@ export const StyledProjectsSection = styled.section`
             text-align: center;
             font-size: 1.875rem;
             margin: 0;
+            color: var(--black-muted);
         }
     }
 `
@@ -68,7 +70,7 @@ export const CardHeader = styled.div`
     }
 
     > p {
-        color: rgb(113 113 122);
+        color: var(--gray-p);
         font-size: 0.875rem;
         line-height: 1.25rem; 
         margin-bottom: 1.5rem;
@@ -89,12 +91,12 @@ export const TagContainer = styled.div`
 
     > div {
         transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-        color: rgb(24 24 27);
-        font-weight: 600;
+        color: var(--black-muted);
+        font-weight: 500;
         font-size: 0.75rem;
         line-height: 1rem;
         padding: 0.125rem 0.625rem;
-        background-color: rgb(244 244 245);
+        background-color: var(--base-color);
         border-radius: 9999px;
         align-items: center;
         display: inline-flex; 
@@ -125,7 +127,7 @@ export const ButtonContainer = styled.div`
 
         > a {
             text-decoration: none; 
-            color: var(--black);
+            color: var(--black-muted);
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -133,6 +135,8 @@ export const ButtonContainer = styled.div`
             > svg {
                 width: 1rem;
                 height: 1rem; 
+                fill: none;
+                stroke: var(--black-muted);
             }
         }
     }

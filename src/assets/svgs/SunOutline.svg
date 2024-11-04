@@ -1,10 +1,1 @@
-<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_486_42)">
-<path d="M27.04 19.3602L19.84 12.2002L14.2 17.8402L21.36 25.0002L27.04 19.3602ZM4 42.0002H16V50.0002H4V42.0002ZM44 2.2002H52V14.0002H44V2.2002ZM76.16 12.1802L81.792 17.8082L74.632 24.9682L69.004 19.3362L76.16 12.1802ZM68.96 72.6402L76.12 79.8402L81.76 74.2002L74.56 67.0402L68.96 72.6402ZM80 42.0002H92V50.0002H80V42.0002ZM48 22.0002C34.76 22.0002 24 32.7602 24 46.0002C24 59.2402 34.76 70.0002 48 70.0002C61.24 70.0002 72 59.2402 72 46.0002C72 32.7602 61.24 22.0002 48 22.0002ZM48 62.0002C39.16 62.0002 32 54.8402 32 46.0002C32 37.1602 39.16 30.0002 48 30.0002C56.84 30.0002 64 37.1602 64 46.0002C64 54.8402 56.84 62.0002 48 62.0002ZM44 78.0002H52V89.8002H44V78.0002ZM14.2 74.1602L19.84 79.8002L27 72.6002L21.36 66.9602L14.2 74.1602Z" fill="black"/>
-</g>
-<defs>
-<clipPath id="clip0_486_42">
-<rect width="96" height="96"/>
-</clipPath>
-</defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="current" stroke="current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" data-id="3"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>

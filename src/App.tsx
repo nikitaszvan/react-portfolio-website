@@ -9,6 +9,7 @@ import FunAboutMeSection from "./sections/FunAboutMeSection/FunAboutMeSection.co
 import ProjectsSection from "./sections/ProjectsSection/ProjectsSection.components";
 import ExperienceSection from "./sections/ExperienceSection/ExperienceSection.component";
 import TestimonialsSection from "./sections/TestimonialsSection/TestimonialsSection.components";
+import DisplaySettingsSection from "./sections/DisplaySettingsSection/DisplaySettingsSection.component";
 import { useRef } from "react";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <ExperienceSection ref={sectionRefs.experience} />
         <TestimonialsSection ref={sectionRefs.testimonials} />
       </MainContentContainer>
+      <DisplaySettingsSection />
     </AppContainer>
   );
 }

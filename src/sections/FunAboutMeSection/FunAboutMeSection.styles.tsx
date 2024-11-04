@@ -1,22 +1,25 @@
 import styled from "styled-components";
 
 export const StyledFunAboutMe = styled.section`
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 1.875rem;
     position: relative;
     padding-block: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
     > span {
         display: flex;
         align-items: center;
-        gap: 0.7rem;
+        gap: 0.8rem;
 
         > svg {
-            height: 1.7rem;
+            height: 1.3rem;
             width: auto;
+            fill: var(--accent-color);
         }
 
         > h2 {
+            color: var(--black-muted);
             font-size: 1.875rem;
             font-weight: 600;
             text-align: center;
@@ -32,7 +35,7 @@ export const StyledHeader = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
-    gap: 0.5rem;
+    gap: 1rem;
 
     > * {
         margin: 0;
@@ -71,7 +74,8 @@ export const HobbyColumn = styled.div`
     align-items: center;
 
     > p {
-        color: rgb(113, 113, 122);
+        color: var(--accent-color);
+        font-weight: 500;
         transition: all 0.3s;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         font-family: 'Montserrat';
@@ -82,8 +86,7 @@ export const IconContainer = styled.div`
     transition: all 0.3s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 9999px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,10 +96,7 @@ export const IconContainer = styled.div`
     &:hover {
         transform: scale(1.1);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
-    }
-
-    &:hover ~ p {
-        color: var(--black);
+        border: 1px solid var(--accent-color);
     }
 
     &:hover > svg {
@@ -108,6 +108,7 @@ export const IconContainer = styled.div`
         height: 3rem;
         transition: all 0.3s;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        fill: var(--black);
     }
 `
 

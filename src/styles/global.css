@@ -53,20 +53,89 @@ button {
 
 :root {
     --bg: #ffffff;
-    --accent-color: #2962ff;    /* blue A700 */
-    --base-color: #e3f2fd;      /* blue 50 */
-    --border-color: #bbdefb;    /* blue 100 */
     --black: #121212;
     --black-muted: #1F2937;
     --black-muted-softer: #4B5563;
+    --gray-p: #71717a;
+    --gray-blue-nav: #717a7a;
+    --accent-color: #2962ff; 
+    --base-color: #e3f2fd; 
+    --border-color: #bbdefb;
+}
+
+[data-color-theme='purple'] {
+    --accent-color: #9c27b0;
+    --base-color: #f3e5f5;
+    --border-color: #e1bee7;
+}
+
+[data-color-theme='green'] {
+    --accent-color: #2e7d32;
+    --base-color: #e8f5e9;
+    --border-color: #c8e6c9;
+}
+
+[data-color-theme='orange'] {
+    --accent-color: #f57c00; 
+    --base-color: #fff3e0;
+    --border-color: #ffe0b2;
+}
+
+[data-color-theme='red'] {
+    --accent-color: #d50000; 
+    --base-color: #ffebee;
+    --border-color: #ffcdd2;
+    
 }
 
 [data-theme='dark'] {
-    --bg: #121212;          /* Dark background */
-    --accent-color: #0039cb;     /* Lightened blue for contrast */
-    --base-color: #0d47a1;       /* Darker base color */
-    --border-color: #424242;
-    --black: #F5F5F5;      /* Dark gray for borders */
-    --black-muted: #e0e0e0;      /* Muted white for text */
-    --black-muted-softer: #b0bec5;
+    --bg: #121212; 
+    --black: #FFFFFF; 
+    --black-muted: #E3EEFF;
+    --black-muted-softer: #ADB8C9;
+    --gray-p: #98989e;
+    --gray-blue-nav: #889191;
+
+    --accent-color: #426ad7;
+    --base-color: #1e3048; 
+    --border-color: #3c4953;
+}
+
+[data-color-theme='purple'][data-theme='dark'] {
+    --accent-color: #9f68f8;
+    --base-color: #322834;
+    --border-color: #3D333F;
+}
+
+[data-color-theme='green'][data-theme='dark'] {
+    --accent-color: #2E7C32;
+    --base-color: #1E271F;
+    --border-color: #373E36;
+}
+
+[data-color-theme='orange'][data-theme='dark'] {
+    --accent-color: #B34501;
+    --base-color: #574C3C;
+    --border-color: #373E36;
+}
+
+[data-color-theme='red'][data-theme='dark'] {
+    --accent-color: #ab281f;
+    --base-color: #302225;
+    --border-color: #574547;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121212; 
+        --black: #FFFFFF; 
+        --black-muted: #E3EEFF;
+        --black-muted-softer: #ADB8C9;
+        --gray-p: #98989e;
+        --gray-blue-nav: #889191;
+        --accent-color: #426ad7;
+        --base-color: #1e3048; 
+        --border-color: #3c4953;
+        --accent-tag: #bfdbfe;
+    }
 }
