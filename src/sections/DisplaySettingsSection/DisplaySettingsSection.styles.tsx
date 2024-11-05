@@ -113,7 +113,7 @@ export const SocialLink = styled(Link)`
     > * {
         width: 1.6rem;
         height: auto;
-        fill: var(--accent-color);
+        fill: var(--black-muted);
 
         &:hover {
             animation: ${jumpShaking} 1.2s forwards;
