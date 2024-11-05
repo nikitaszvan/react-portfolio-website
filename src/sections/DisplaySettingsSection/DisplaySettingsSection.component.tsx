@@ -2,12 +2,17 @@ import { useState, useEffect, useRef } from "react";
 import { ReactComponent as MoonOutline } from "src/assets/svgs/MoonOutline.svg";
 import { ReactComponent as SunOutline } from "src/assets/svgs/SunOutline.svg";
 import { ReactComponent as PaletteOutline } from "src/assets/svgs/PaletteOutline.svg";
+import { ReactComponent as GitHubFilled } from "src/assets/svgs/GitHubFilled.svg";
+import { ReactComponent as LinkedInFilled } from "src/assets/svgs/LinkedInFilled.svg";
+import { ReactComponent as EnvelopeFilled } from "src/assets/svgs/EnvelopeFilled.svg";
 
 import { 
     BlackCircle,
     DisplaySettingsContainer,
     DropdownMenu,
     GradientCircle,
+    SocialLink,
+    SocialsContainer,
     StyledThemeOption,
     ThemeButtonContainer
  } from "./DisplaySettingsSection.styles";
@@ -85,12 +90,13 @@ useEffect(() => {
 
   return (
     <DisplaySettingsContainer>
+      
+      <ThemeButtonContainer ref={dropdownRef}>
       <button
         onClick={toggleDarkMode}
       >
         {isDarkMode ? <SunOutline /> : <MoonOutline /> }
       </button>
-      <ThemeButtonContainer ref={dropdownRef}>
         <button
           onClick={() => setIsDropdownOpen((prev) => !prev)}
         >
@@ -118,6 +124,13 @@ useEffect(() => {
           </DropdownMenu>
         )}
       </ThemeButtonContainer>
+      <SocialsContainer>
+        {[{icon: <GitHubFilled/>, link:"https://github.com"}, {icon: <LinkedInFilled/>, link:"https://linkedin.com"}, 
+        {icon: <EnvelopeFilled/>, link:"mailto:nikitaszvan@gmail.com"}]
+        .map(({icon, link}, index) => 
+            <SocialLink key={index} to={link}>{icon}</SocialLink>
+        )}
+      </SocialsContainer>
     </DisplaySettingsContainer>
   );
 };

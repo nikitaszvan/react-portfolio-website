@@ -10,7 +10,7 @@ export const HeroImage = styled.img`
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
-    border: 0.25rem solid var(--accent-color);
+    border: 0.32rem solid var(--accent-color);
 `
 
 export const HeroTextContainer = styled.div`
@@ -30,7 +30,7 @@ export const HeroTextContainer = styled.div`
         color: var(--black-muted);
 
         > span {
-            border-bottom: 0.25rem solid var(--accent-color);
+            border-bottom: 0.32rem solid var(--accent-color);
         }
 
         @media (min-width: 640px) { /* s */

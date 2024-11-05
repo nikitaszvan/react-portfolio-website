@@ -3,8 +3,6 @@ import { useRef, useState, useEffect } from 'react';
 import {
     NavLink,
     NavLinkContainer,
-    SocialLink,
-    SocialsContainer,
     StyledSideNavigation
     } from "./SideNavigation.styles";
 
@@ -70,14 +68,6 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ sectionRefs }) => {
                 </NavLink>
             )}
           </NavLinkContainer>
-            {/* <SocialsContainer>
-            {[{icon: <GitHubOutline/>, link:"https://github.com"}, {icon: <LinkedInOutline/>, link:"https://linkedin.com"}, 
-            {icon: <Envelope/>, link:"mailto:nikitaszvan@gmail.com"}]
-            .map(({icon, link}, index) => 
-                <SocialLink key={index} to={link}>{icon}</SocialLink>
-            )}
-            </SocialsContainer>
-            <button onClick={toggleDarkMode}>Toggle mode</button> */}
      </StyledSideNavigation>
   )
 }

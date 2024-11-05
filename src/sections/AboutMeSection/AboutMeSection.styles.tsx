@@ -65,7 +65,6 @@ export const TechStackIcon = styled.div`
     > svg {
         width: 90%;
         color: var(--accent-color);
-
     }
 `
 
@@ -89,7 +88,11 @@ export const TechStackHeader = styled.div<{ isExpanded: boolean }>`
         color: var(--black-muted);
         margin: 0;
         line-height: 1.75rem;
-        margin-right: 0.75rem;
+        margin-right: 1.3rem;
+
+        > span {
+            color: var(--accent-color);
+        }
     }
 
 `

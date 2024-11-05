@@ -4,7 +4,7 @@ import {
     StyledHeroSection,
     } from "./HeroSection.styles";
 
-import HeroImageSrc from "../../assets/images/portfolio-headshot.jpg";
+import HeroImageSrc from "../../assets/images/headshot.jpg";
 import { forwardRef } from "react";
 
 const HeroSection = forwardRef((props, ref) => {

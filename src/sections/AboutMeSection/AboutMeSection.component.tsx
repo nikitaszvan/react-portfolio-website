@@ -14,6 +14,7 @@ import {
 import { ReactComponent as Fragment } from "../../assets/svgs/Fragment.svg";
 import { ReactComponent as Cloud } from "../../assets/svgs/Cloud.svg";
 import { ReactComponent as CylindricalStack } from "../../assets/svgs/CylindricalStack.svg";
+import { ReactComponent as Network } from "../../assets/svgs/Network.svg";
 import { ReactComponent as LightingOutline } from "../../assets/svgs/LightingOutline.svg";
 
 type TechStack = {
@@ -41,6 +42,12 @@ const AboutMeSection = forwardRef((props, ref) => {
       icon: <Cloud />,
       technologies: ["Node.js", "Express", "Python", "Django"],
       description: "Building robust server-side applications and RESTful APIs to power modern web applications."
+    },
+    {
+        name: "State Management",
+        icon: <Network />,
+        technologies: ["Node.js", "Express", "Python", "Django"],
+        description: "Building robust server-side applications and RESTful APIs to power modern web applications."
     },
     {
       name: "Database Management",

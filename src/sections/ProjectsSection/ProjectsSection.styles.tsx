@@ -124,6 +124,13 @@ export const ButtonContainer = styled.div`
         cursor: pointer;
         border: none;
 
+        &:hover {
+            color: var(--accent-color);
+            background-color: var(--bg);
+            border: 0.1rem solid var(--accent-color);
+            padding-inline: 0.65rem;
+        }
+
 
         > a {
             text-decoration: none; 

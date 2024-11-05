@@ -13,6 +13,6 @@ export const MainContentContainer = styled.div`
     flex-direction: column;
     gap: 4rem;
     margin-inline: auto;
-    margin-top: 4.5rem;
+    margin-top: 2rem;
     width: 50rem;
 `

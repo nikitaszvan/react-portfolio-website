@@ -1,38 +1,30 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { Link } from "react-router-dom";
+
+const jumpShaking = keyframes`
+    0% { transform: translateX(0) }
+    25% { transform: translateY(-5px) }
+    35% { transform: translateY(-5px) rotate(17deg) }
+    55% { transform: translateY(-5px) rotate(-17deg) }
+    65% { transform: translateY(-5px) rotate(17deg) }
+    75% { transform: translateY(-5px) rotate(-17deg) }
+    100% { transform: translateY(0) rotate(0) }
+`;
 
 export const DisplaySettingsContainer = styled.div`
     position: sticky;
     top: 3rem;
-    height: 100%;
+    height: calc(100vh - 6rem);
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     gap: 0.5rem;
-
-    > button {
-        padding: 0.7rem;
-        border-radius: 50%;
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: transparent;
-        cursor: pointer;
-        height: fit-content;
-
-        &:hover {
-            background-color: var(--base-color);
-        }
-
-        > svg {
-            width: 1.6rem;
-            height: 1.6rem;
-            stroke: var(--accent-color);
-            fill: none;
-        }
-    }
+    align-items: flex-end;
 `
 
 export const ThemeButtonContainer = styled.div`
     position: relative;
+    display: flex;
 
     > button {
         padding: 0.7rem;
@@ -60,7 +52,8 @@ export const ThemeButtonContainer = styled.div`
 
 export const DropdownMenu = styled.div`
     position: absolute;
-    right: 0;
+    right: 0.5rem;
+    top: 2.5rem;
     margin-top: 0.5rem;
     background-color: var(--bg);
     border-radius: calc(0.5rem - 2px);
@@ -104,3 +97,26 @@ export const GradientCircle = styled.div<{gradient: string[]}>`
     `background: linear-gradient(to bottom right, ${(props.gradient[0])} 0%, ${props.gradient[1]} 15%, ${props.gradient[2]} 60%)`)};
     
 `
+
+export const SocialsContainer = styled.div`
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 0.5rem;
+    padding-inline: 0.6rem;
+
+`
+
+export const SocialLink = styled(Link)`
+    align-self: flex-end;
+
+    > * {
+        width: 1.6rem;
+        height: auto;
+        fill: var(--accent-color);
+
+        &:hover {
+            animation: ${jumpShaking} 1.2s forwards;
+        }
+    }
+`;
