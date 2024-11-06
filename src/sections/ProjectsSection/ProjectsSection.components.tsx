@@ -114,7 +114,6 @@ const ProjectsSection = forwardRef((props, ref) => {
                         <button>
                             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                                 <ExpandIcon />
-                                Live Demo
                             </a>
                         </button>
                     )}
@@ -122,7 +121,6 @@ const ProjectsSection = forwardRef((props, ref) => {
                         <button>
                             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                                 <GitHubOutline />
-                                GitHub
                             </a>
                         </button>
                     )}

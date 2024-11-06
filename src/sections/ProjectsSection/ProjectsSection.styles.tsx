@@ -24,6 +24,10 @@ export const StyledProjectsSection = styled.section`
             font-size: 1.875rem;
             margin: 0;
             color: var(--black-muted);
+
+            @media (max-width: 769px) {
+                font-size: 1.5rem;
+            }
         }
     }
 `
@@ -35,13 +39,13 @@ export const CardContainer = styled.div`
 `
 
 export const ProjectCard = styled.div`
-    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-color);
+    border: var(--border-width) solid var(--border-color);
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 
     > img {
         border-top-left-radius: 0.5rem;
@@ -50,10 +54,6 @@ export const ProjectCard = styled.div`
         width: 100%;
         height: 12rem;
         margin-bottom: 1.5rem;
-    }
-
-    &:hover {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 `
 
@@ -129,7 +129,6 @@ export const ButtonContainer = styled.div`
             padding-inline: 0.655rem;
         }
 
-
         > a {
             text-decoration: none; 
             color: var(--black-muted);
@@ -154,4 +153,34 @@ export const ButtonContainer = styled.div`
             background-color: var(--border-color);
         }
     }
+
+    > button:nth-of-type(2) {
+        gap: 0.5rem;
+
+        &:after {
+            content: "Live Demo";
+            color: var(--black-muted);
+
+            @media (max-width: 641px) {
+                content: "Demo"
+            }
+        } 
+    } 
+
+    > button:nth-of-type(3) {
+        gap: 0.5rem;
+
+        @media (max-width: 641px) {
+            gap: 0;
+        }
+        
+        &:after {
+            content: "Github";
+            color: var(--black-muted);
+
+            @media (max-width: 641px) {
+                content: ""
+            }
+        } 
+    } 
 `

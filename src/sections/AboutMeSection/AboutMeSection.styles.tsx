@@ -28,6 +28,10 @@ export const StyledAboutMeSection = styled.div`
             text-align: center;
             font-size: 1.875rem;
             margin: 0;
+
+            @media (max-width: 769px) {
+                font-size: 1.5rem;
+            }
         }
     }
 
@@ -37,13 +41,10 @@ export const TechStackContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
-    border: 1px solid var(--border-color);
+    border: var(--border-width) solid var(--border-color);
     border-radius: 0.5rem;
     padding-bottom: 1.3rem;
-
-    &:hover {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 
     > p {
         display: inline-flex;
@@ -66,7 +67,10 @@ export const TechStackIcon = styled.div`
     > svg {
         width: 90%;
         color: var(--accent-color);
-
+        
+        @media (max-width: 769px) {
+            display: none;
+        }
     }
 `
 
@@ -88,7 +92,6 @@ export const TechStackHeader = styled.div<{ isExpanded: boolean }>`
     > svg {
        height: 80%;
        aspect-ratio: 1/1;
-       ${(props => props.isExpanded && 'fill: var(--bg);')};
     }
 
     > h3 {
@@ -99,6 +102,10 @@ export const TechStackHeader = styled.div<{ isExpanded: boolean }>`
         line-height: 1.75rem;
         margin-right: 1.3rem;
 
+        @media (max-width: 769px) {
+            font-size: 1.1rem;
+        }
+        
         > span {
             color: var(--accent-color);
         }
@@ -131,7 +138,7 @@ export const StyledChevronRight = styled(ChevronRight)<{isExpanded: boolean}>`
     margin-left: 0.25rem;
     height: 0.8rem;
     width: 0.8rem;
-    transition: transform 0.3s;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     fill: var(--accent-color);
     transform: ${(props => props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
 `
@@ -178,7 +185,7 @@ export const StyledLink = styled(Link)`
     }
 
     > span {
-        transition: margin 0.3s ease-in-out; 
+        transition: margin 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
         background-color: var(--base-color);
         z-index: 10;
     }
@@ -190,7 +197,8 @@ export const StyledLink = styled(Link)`
         height: 0.9rem;
         transform: translateX(-100%);
         opacity: 0;
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; 
+        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+        transition-property: transform, opacity;
     }
 `
 

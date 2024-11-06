@@ -5,14 +5,23 @@ export const AppContainer = styled.div`
     display: flex;
     position: relative;
     padding: 3rem;
+    box-sizing: border-box;
+
+    @media (max-width: 1025px) {
+        padding: 4% 5%;
+    }
 `
 
 export const MainContentContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
     margin-inline: auto;
     margin-top: 2rem;
     width: 50rem;
+
+    @media (max-width: 1025px) {
+        width: 90%;
+    }
 `

@@ -19,6 +19,10 @@ export const StyledTestimonialsSection = styled.div`
             margin: 0;
             margin-block: 1rem;
             color: var(--black-muted);
+
+            @media (max-width: 769px) {
+                font-size: 1.5rem;
+            }
         }
     }
 `

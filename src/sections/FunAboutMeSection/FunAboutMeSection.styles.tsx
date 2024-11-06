@@ -24,6 +24,10 @@ export const StyledFunAboutMe = styled.section`
             font-weight: 600;
             text-align: center;
             margin: 0;
+
+            @media (max-width: 769px) {
+                font-size: 1.5rem;
+            }
         }
     }
 `
@@ -64,6 +68,12 @@ export const HobbiesContainer = styled.div`
     position: relative;
     z-index: 10;
 
+    @media (max-width: 769px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-inline: 1.5rem;
+    }
+
 `
 
 export const HobbyColumn = styled.div`
@@ -76,25 +86,44 @@ export const HobbyColumn = styled.div`
     > p {
         color: var(--black);
         font-weight: 500;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:nth-of-type(1) {
+        > div:nth-of-type(2) {
+            @media (min-width: 768px) and (max-width: 1025px) {
+                transform: translateX(-16.5%) translateY(0);
+            }
+        }
+    }
+
+    &:last-of-type {
+        > div:nth-of-type(2) {
+            @media (min-width: 768px) and (max-width: 1025px) {
+                transform: translateX(-84%) translateY(0);
+            }
+        }
     }
 `
 
 export const IconContainer = styled.div`
-    transition: all 0.3s;
+    transition: transform 0.3s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 9999px;
-    border: 1px solid var(--border-color);
+    border: var(--border-width) solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+
+    @media (max-width: 769px) {
+        padding: 1.2rem;
+    }
     cursor: pointer;
 
     &:hover {
         transform: scale(1.1);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
-        border: 1px solid var(--accent-color);
+        border: var(--border-width) solid var(--accent-color);
     }
 
     &:hover > svg {
@@ -108,8 +137,12 @@ export const IconContainer = styled.div`
     > svg {
         width: 3rem;
         height: 3rem;
-        transition: all 0.3s;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        @media (max-width: 769px) {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
         fill: var(--black);
     }
 `
@@ -118,23 +151,25 @@ export const ImageContainer = styled.div<{isVisible: boolean}>`
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%) translateY(0);
-    transition: all 0.3s;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: opacity;
     display: flex;
     gap: 0.5rem;
+    z-index: 3;
 
-    ${(props => props.isVisible ?
-        `opacity: 1;
-        transform: translateX(-50%) translateY(0);`
-        :
-        `opacity: 0;
-        transform: translateX(-50%) translateY(-1rem);`
-    )}
+    opacity: ${(props) => (props.isVisible ? 1 : 0)};
+    transform: ${(props) => (props.isVisible ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(-1rem)')};
 
     > div {
         position: relative;
         width: 8rem;
         height: 8rem;
+
+        @media (max-width: 769px) {
+            width: 6rem;
+            height: 6rem;
+        }
+
         border-radius: 0.5rem;
         overflow: hidden;
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 

@@ -21,11 +21,9 @@ export const StyledTestimonialCard = styled.div`
     padding: 2rem;
     animation: ${fadeInUp} 0.5s forwards;
     height: fit-content;
-    border: 1px solid var(--border-color);
-
-    &:hover {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
+    border: var(--border-width) solid var(--border-color);
+    border-top: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 `
 
 export const AccentBorder = styled.div`

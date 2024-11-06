@@ -8,14 +8,18 @@ interface NavLinkProps {
 
 
 export const StyledSideNavigation = styled.nav`
-    display: flex;
-    flex-direction: column;
-    margin-right: 2rem;
-    width: 11.7rem;
-    height: calc(100vh - 6rem);
-    position: sticky;
-    top: 3rem;
-    font-family: 'Montserrat';
+    display: none;
+
+    @media (min-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+        margin-right: 2rem;
+        width: 11.7rem;
+        height: calc(100vh - 6rem);
+        position: sticky;
+        top: 3rem;
+        font-family: 'Montserrat';
+    }
 `;
 
 export const NavLinkContainer = styled.div`

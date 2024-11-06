@@ -27,6 +27,10 @@ export const StyledExperienceSection = styled.section`
             text-align: center;
             margin: 0;
             color: var(--black-muted);
+
+            @media (max-width: 769px) {
+                font-size: 1.5rem;
+            }
         }
     }
 `
@@ -35,7 +39,7 @@ export const CardsContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 1.5rem;
 
     > div:last-of-type {
         padding-bottom: 0; 
@@ -54,6 +58,11 @@ export const JobHistoryItem = styled.div`
     position: relative;
     padding-left: 0.75rem;
     padding-bottom: 0.75rem;
+
+    @media (max-width: 769px) {
+        padding-left: 0.3rem;
+        padding-bottom: 0.3rem;
+    }
 `
 
 export const VerticalLine = styled.div`
@@ -76,8 +85,14 @@ export const Circle = styled.div<{ translateDown: boolean }>`
     height: 0.75rem;
     background-color: var(--accent-color);
     border-radius: 50%;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform, top;
     cursor: pointer;
+
+    @media (max-width: 769px) {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
 
     ${(props => props.translateDown && `
         transform: translateY(-100%);
@@ -90,11 +105,11 @@ export const JobHistoryCard = styled.div`
     backdrop-filter: blur(4px);
     padding: 1.5rem;
     border-radius: calc(0.5rem + 4px);
-    border: 1px solid var(--border-color);
+    border: var(--border-width) solid var(--border-color);
     margin-left: 1rem;
-
-    &:hover {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    @media (max-width: 769px) {
+        padding: 1.1rem;
     }
 `
 
@@ -102,7 +117,17 @@ export const CardHeader = styled.div`
     display: flex;
     align-items: center;
     gap: 1.5rem;
+
+    @media (max-width: 769px) {
+        gap: 0.7rem;
+    }
+
     height: 6rem;
+
+    @media (max-width: 769px) {
+        height: 4rem;
+    }
+
 
     > img {
         height: 100%;
@@ -123,12 +148,21 @@ export const TextHeaderContainer = styled.div`
         font-size: 1.3rem;
         line-height: 1.75rem;
         color: var(--accent-color);
+
+        @media (max-width: 769px) {
+            font-size: 0.9rem;
+            line-height: 1rem;
+        }
     }
 
     > p {
         color: var(--black);
         font-weight: 500;
         font-family: 'Montserrat';
+
+        @media (max-width: 769px) {
+            font-size: 0.7rem;
+        }
     }
 
     > span {
@@ -145,6 +179,10 @@ export const TextHeaderContainer = styled.div`
         > svg {
             height: 0.9rem;
             width: auto; 
+
+            @media (max-width: 769px) {
+                height: 0.5rem;
+            }
         }
 
         > p {
@@ -152,6 +190,11 @@ export const TextHeaderContainer = styled.div`
             line-height: 1.375;
             letter-spacing: 0.05em;
             font-family: 'Montserrat';
+
+            @media (max-width: 769px) {
+                font-size: 0.55rem;
+                line-height: 1;
+            }
         }
     }
 `
@@ -171,10 +214,13 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
             -webkit-line-clamp: 2;
         `
         )}
+
+        @media (max-width: 769px) {
+            font-size: 0.65rem;
+        }
     }
 
     > button {
-        transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
         color: var(--accent-color);
         font-size: 0.9rem;
         line-height: 1.25rem;
@@ -187,6 +233,10 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
         border: none;
         background-color: transparent;
         padding: 0;
+
+        @media (max-width: 769px) {
+            font-size: 0.6rem;
+        }
     }
 
 `
@@ -194,6 +244,11 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
 export const StyledChevronDown = styled(ChevronDown)<{ rotateArrow: boolean }>`
     width: 1rem;
     height: 1rem;
+
+    @media (max-width: 769px) {
+        width: 0.7rem;
+        height: 0.7rem;
+    }
 
     transform: ${(props => props.rotateArrow ? 'rotate(-180deg)' : 'rotate(0deg)' )};
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
