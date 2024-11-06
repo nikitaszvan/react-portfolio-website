@@ -12,18 +12,19 @@ const jumpShaking = keyframes`
 `;
 
 export const DisplaySettingsContainer = styled.div`
-    display: none;
+    position: sticky;
+    top: 3rem;
+    height: calc(100vh - 6rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: flex-end;
 
-    @media (min-width: 1024px) {
-        position: sticky;
-        top: 3rem;
-        height: calc(100vh - 6rem);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 0.5rem;
-        align-items: flex-end;
-}
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 `
 
 export const ThemeButtonContainer = styled.div`
@@ -117,7 +118,7 @@ export const SocialLink = styled(Link)`
     > * {
         width: 1.6rem;
         height: auto;
-        fill: var(--black-muted-softer);
+        fill: var(--accent-color);
 
         &:hover {
             animation: ${jumpShaking} 1.2s forwards;

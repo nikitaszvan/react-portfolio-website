@@ -5,7 +5,7 @@ export const StyledHeroSection = styled.div`
     flex-direction: column;
     gap: 2rem;
 
-    @media (max-width: 769px) {
+    @media (max-width: 767px) {
         gap: 1.2rem;
     }
 `
@@ -16,7 +16,7 @@ export const HeroImage = styled.img`
     border-radius: 50%;
     border: 0.32rem solid var(--accent-color);
 
-    @media (max-width: 769px) {
+    @media (max-width: 767px) {
         width: 8rem;
         height: 8rem;
         border: 0.22rem solid var(--accent-color);
@@ -39,28 +39,27 @@ export const HeroTextContainer = styled.div`
         color: var(--black-muted);
         padding-bottom: 0;
 
-        @media (max-width: 769px) {
-            font-size: 2rem;
+        @media (max-width: 767px) {
+            font-size: 2.5rem;
         }
 
         > span {
             box-shadow: inset 0px -0.32rem 0 0 var(--accent-color);
 
-            @media (max-width: 769px) {
+            @media (max-width: 767px) {
                 box-shadow: inset 0px -0.22rem 0 0 var(--accent-color);
             }
         }
     }
 
     > p {
-        font-size: 1.25rem;
+        font-size: 1.4rem;
         color: var(--black-muted-softer);
-        line-height: 1.625;
-        font-family: 'Montserrat';
-        font-weight: 500;
+        font-weight: 350;
+        font-style: italic;
 
-        @media (max-width: 769px) {
-            font-size: 1rem;
+        @media (max-width: 767px) {
+            font-size: 1.125rem;
         }
     }
 `

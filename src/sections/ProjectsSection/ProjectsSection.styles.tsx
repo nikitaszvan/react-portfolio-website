@@ -6,6 +6,10 @@ export const StyledProjectsSection = styled.section`
     gap: 2rem;
     padding-top: 1rem;
 
+    @media (max-width: 1023px) {
+        gap: 1rem;
+    }
+
     > span {
         display: flex;
         gap: 0.7rem;
@@ -25,7 +29,7 @@ export const StyledProjectsSection = styled.section`
             margin: 0;
             color: var(--black-muted);
 
-            @media (max-width: 769px) {
+            @media (max-width: 767px) {
                 font-size: 1.5rem;
             }
         }
@@ -70,10 +74,14 @@ export const CardHeader = styled.div`
     }
 
     > p {
-        color: var(--gray-p);
-        font-size: 0.875rem;
+        color: var(--black-muted-softer);
+        font-size: 1rem;
         line-height: 1.25rem; 
         margin-bottom: 1.5rem;
+
+        @media (max-width: 767px) {
+            font-size: 0.875rem;
+        }
     }
 `
 
@@ -91,10 +99,10 @@ export const TagContainer = styled.div`
 
     > span {
         color: var(--black-muted);
-        font-weight: 500;
-        font-size: 0.75rem;
+        font-weight: 450;
+        font-size: 0.8rem;
         line-height: 1rem;
-        padding: 0.125rem 0.625rem;
+        padding: 0.2rem 0.8rem;
         background-color: var(--base-color);
         border-radius: 9999px;
         align-items: center;

@@ -9,6 +9,10 @@ export const StyledExperienceSection = styled.section`
     gap: 2rem;
     padding-top: 1rem;
 
+    @media (max-width: 1023px) {
+        gap: 1rem;
+    }
+
     > span {
         display: flex;
         align-items: center;
@@ -28,7 +32,7 @@ export const StyledExperienceSection = styled.section`
             margin: 0;
             color: var(--black-muted);
 
-            @media (max-width: 769px) {
+            @media (max-width: 767px) {
                 font-size: 1.5rem;
             }
         }
@@ -46,22 +50,13 @@ export const CardsContainer = styled.div`
     }
 `
 
-export const GradientOverlay = styled.div`
-    position: absolute;
-    inset: 0;
-    filter: blur(64px);
-    border-radius: calc(0.5rem + 12px);
-    z-index: -10;
-`
-
 export const JobHistoryItem = styled.div`
     position: relative;
     padding-left: 0.75rem;
     padding-bottom: 0.75rem;
 
-    @media (max-width: 769px) {
-        padding-left: 0.3rem;
-        padding-bottom: 0.3rem;
+    @media (max-width: 1023px) {
+        padding: 0;
     }
 `
 
@@ -76,6 +71,10 @@ export const VerticalLine = styled.div`
     margin-block: auto;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 `
 
 export const Circle = styled.div<{ translateDown: boolean }>`
@@ -89,7 +88,7 @@ export const Circle = styled.div<{ translateDown: boolean }>`
     transition-property: transform, top;
     cursor: pointer;
 
-    @media (max-width: 769px) {
+    @media (max-width: 767px) {
         width: 0.5rem;
         height: 0.5rem;
     }
@@ -107,30 +106,26 @@ export const JobHistoryCard = styled.div`
     border-radius: calc(0.5rem + 4px);
     border: var(--border-width) solid var(--border-color);
     margin-left: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    @media (max-width: 769px) {
-        padding: 1.1rem;
+
+    @media (max-width: 1023px) {
+        margin: 0;
     }
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 `
 
 export const CardHeader = styled.div`
     display: flex;
     align-items: center;
     gap: 1.5rem;
-
-    @media (max-width: 769px) {
-        gap: 0.7rem;
-    }
-
     height: 6rem;
 
-    @media (max-width: 769px) {
-        height: 4rem;
+    @media (max-width: 767px) {
+        height: 4.5rem;
     }
 
-
     > img {
-        height: 100%;
+        height: 80%;
         aspect-ratio: 1/1;
         object-fit: cover;
         display: block;
@@ -139,6 +134,10 @@ export const CardHeader = styled.div`
 `
 
 export const TextHeaderContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
     > * {
         margin: 0;
     }
@@ -146,56 +145,33 @@ export const TextHeaderContainer = styled.div`
     > h3 {
         font-weight: 600;
         font-size: 1.3rem;
-        line-height: 1.75rem;
         color: var(--accent-color);
 
-        @media (max-width: 769px) {
-            font-size: 0.9rem;
-            line-height: 1rem;
+        @media (max-width: 767px) {
+            font-size: 1.125rem;
         }
     }
 
-    > p {
-        color: var(--black);
+    > p:nth-of-type(1) {
+        color: var(--black-muted);
         font-weight: 500;
-        font-family: 'Montserrat';
+        
 
-        @media (max-width: 769px) {
-            font-size: 0.7rem;
+        @media (max-width: 767px) {
+            font-size: 1rem;
         }
     }
 
-    > span {
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-        margin-top: 0.3rem;
-
-        > * {
-            margin: 0;
-            color: var(--black-muted);
-        }
-
-        > svg {
-            height: 0.9rem;
-            width: auto; 
-
-            @media (max-width: 769px) {
-                height: 0.5rem;
-            }
-        }
-
-        > p {
+    > p:nth-of-type(2) {
             font-size: 0.875rem;
-            line-height: 1.375;
-            letter-spacing: 0.05em;
-            font-family: 'Montserrat';
+            line-height: 1.25rem;
+            color: var(--gray-p);
 
-            @media (max-width: 769px) {
-                font-size: 0.55rem;
-                line-height: 1;
+            @media (max-width: 767px) {
+                font-size: 0.875rem;
             }
         }
+
     }
 `
 
@@ -203,7 +179,7 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
     position: relative;
 
     > p {
-        color: var(--gray-p);
+        color: var(--black-muted-softer);
         line-height: 1.625;
         
         ${(props => !props.expandedJob && 
@@ -215,37 +191,38 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
         `
         )}
 
-        @media (max-width: 769px) {
-            font-size: 0.65rem;
+        @media (max-width: 767px) {
+            font-size: 0.875rem;
+            font-weight: 400;
         }
     }
+`
 
-    > button {
-        color: var(--accent-color);
-        font-size: 0.9rem;
-        line-height: 1.25rem;
-        font-weight: 500;
-        gap: 0.25rem;
-        align-items: center;
-        display: flex;
-        margin-top: 0.5rem;
-        cursor: pointer;
-        border: none;
-        background-color: transparent;
-        padding: 0;
+export const ExpandButton = styled.button`
+    color: var(--accent-color);
+    font-size: 0.95rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    gap: 0.4rem;
+    align-items: center;
+    display: flex;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0;
 
-        @media (max-width: 769px) {
-            font-size: 0.6rem;
-        }
+    @media (max-width: 767px) {
+        font-size: 0.875rem;
     }
 
 `
 
 export const StyledChevronDown = styled(ChevronDown)<{ rotateArrow: boolean }>`
-    width: 1rem;
-    height: 1rem;
+    width: 1.2rem;
+    height: 1.2rem;
 
-    @media (max-width: 769px) {
+    @media (max-width: 767px) {
         width: 0.7rem;
         height: 0.7rem;
     }

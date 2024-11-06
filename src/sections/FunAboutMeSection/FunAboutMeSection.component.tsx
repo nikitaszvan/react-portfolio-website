@@ -58,7 +58,7 @@ const FunAboutMeSection = forwardRef((props, ref) => {
         <span><PaperPlane/><h2>Fun</h2></span>
         <StyledHeader>
             <h2>When I'm Not Coding...</h2>
-            <p>Hover to get a glimpse into my world beyond work.</p>
+            <p><span></span> to get a glimpse into my world beyond work.</p>
         </StyledHeader>
         <HobbiesContainer>
         {hobbies.map((hobby, index) => (
@@ -78,7 +78,6 @@ const FunAboutMeSection = forwardRef((props, ref) => {
                             <img
                                 src={src}
                                 alt={`${hobby.label} image ${index + 1}`}
-                                className="object-cover"
                             />
                         </div>
                     ))}

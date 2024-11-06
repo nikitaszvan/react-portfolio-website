@@ -20,7 +20,7 @@ export const StyledTestimonialsSection = styled.div`
             margin-block: 1rem;
             color: var(--black-muted);
 
-            @media (max-width: 769px) {
+            @media (max-width: 767px) {
                 font-size: 1.5rem;
             }
         }

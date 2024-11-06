@@ -7,7 +7,7 @@ export const AppContainer = styled.div`
     padding: 3rem;
     box-sizing: border-box;
 
-    @media (max-width: 1025px) {
+    @media (max-width: 1023px) {
         padding: 4% 5%;
     }
 `
@@ -20,8 +20,9 @@ export const MainContentContainer = styled.div`
     margin-inline: auto;
     margin-top: 2rem;
     width: 50rem;
+    box-sizing: border-box;
 
-    @media (max-width: 1025px) {
-        width: 90%;
+    @media (max-width: 1023px) {
+        width: 100%;
     }
 `

@@ -8,6 +8,10 @@ export const StyledAboutMeSection = styled.div`
     gap: 1.7rem;
     padding-top: 1rem;
 
+    @media (max-width: 1023px) {
+        gap: 1rem;
+    }
+
     > * {
         margin: 0;
     }
@@ -29,7 +33,7 @@ export const StyledAboutMeSection = styled.div`
             font-size: 1.875rem;
             margin: 0;
 
-            @media (max-width: 769px) {
+            @media (max-width: 767px) {
                 font-size: 1.5rem;
             }
         }
@@ -68,7 +72,7 @@ export const TechStackIcon = styled.div`
         width: 90%;
         color: var(--accent-color);
         
-        @media (max-width: 769px) {
+        @media (max-width: 767px) {
             display: none;
         }
     }
@@ -96,14 +100,15 @@ export const TechStackHeader = styled.div<{ isExpanded: boolean }>`
 
     > h3 {
         font-size: 1.3rem;
-        font-weight: 600;
+        font-weight: 500;
         color: var(--black-muted);
         margin: 0;
         line-height: 1.75rem;
         margin-right: 1.3rem;
 
-        @media (max-width: 769px) {
-            font-size: 1.1rem;
+        @media (max-width: 767px) {
+            font-size: 1.2rem;
+            font-weight: 550;
         }
         
         > span {
@@ -153,10 +158,10 @@ export const TagsContainer = styled.div`
 
 export const StyledLink = styled(Link)`
     color: var(--black-muted);
-    font-weight: 400;
+    font-weight: 450;
     font-size: 0.9rem;
     line-height: 1rem;
-    font-weight: 500;
+
     padding: 0.2rem 0.8rem;
     background-color: var(--base-color);
     border-radius: 9999px;
@@ -211,6 +216,10 @@ export const StackDescription = styled.p`
     line-height: 1.4rem;
     font-weight: 300;
     padding-inline: 1.3rem;
+
+    @media (max-width: 767px) {
+        font-size: 0.875rem;
+    }
 
     > span {
         font-weight: 600;

@@ -38,7 +38,7 @@ export const AccentBorder = styled.div`
 export const MainCard = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 2rem;
 
 
     > blockquote {
@@ -46,9 +46,9 @@ export const MainCard = styled.div`
         margin: 0;
 
         > p {
-            color: var(--gray-p);
+            color: var(--black-muted-softer);
             font-style: italic;
-            line-height: 1.625;
+            line-height: 1.6rem;
             margin: 0;
         }
     }
@@ -59,13 +59,14 @@ export const MainCard = styled.div`
         align-items: center;
         color: var(--accent-color); 
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 400;
+        font-style: italic;
 
         > svg {
-            width: 0.7rem;
-            height: 0.7rem;
+            width: 1rem;
+            height: 1rem;
             margin-left: 0.4rem; 
-            fill: var(--accent-color); 
+            color: var(--accent-color); 
         }
     }
 `
@@ -75,7 +76,7 @@ export const CardHeader = styled.div`
     top: 0.5rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
     height: 5rem;
     margin-bottom: 0.5rem;
 `
@@ -88,7 +89,7 @@ export const ImageContainer = styled.div`
         width: 5.5rem;
         border-radius: 50%;
         border: 0.3rem solid var(--bg);
-        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 `
 
@@ -114,7 +115,7 @@ export const HeaderText = styled.div`
     margin-left: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.1rem;
 
     > * {
         margin: 0;
@@ -123,22 +124,21 @@ export const HeaderText = styled.div`
     > h3 {
         font-size: 1.25rem;
         font-weight: 600;
-        var(--black-muted-softer);
+        color: var(--black-muted);
+        margin-bottom: 0.1rem;
     }
 
     > p {
-        font-size: 0.875rem;
-        var(--black-muted-softer);
+        font-size: 1rem;
+        color: var(--black-muted-softer);
     }
 
     > p:nth-of-type(1) {
-        font-family: 'Montserrat'; 
+        
     }
 
     > p:nth-of-type(2) {
         color: var(--accent-color);  
-        letter-spacing: 0.08rem;
-        font-weight: 500;
     }
 `
 

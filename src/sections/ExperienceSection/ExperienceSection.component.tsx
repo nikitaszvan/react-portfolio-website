@@ -4,9 +4,9 @@ import {
     CardHeader,
     CardsContainer,
     Circle,
+    ExpandButton,
     JobHistoryCard,
     JobHistoryItem,
-    GradientOverlay,
     StyledChevronDown,
     StyledExperienceSection,
     TextHeaderContainer,
@@ -27,7 +27,6 @@ const ExperienceSection = forwardRef((props, ref) => {
         {
           title: "Senior Web Developer",
           company: "Tech Innovations Inc.",
-          location: "Toronto, CA",
           period: "Jan 2020 - Present",
           description: "Led development of cutting-edge web applications using React and Node.js. Mentored junior developers and implemented best practices in code reviews. Collaborated with cross-functional teams to deliver high-quality software solutions on time and within budget. Implemented CI/CD pipelines to streamline deployment processes and improve overall development efficiency.",
           image: googleLogo
@@ -35,7 +34,6 @@ const ExperienceSection = forwardRef((props, ref) => {
         {
           title: "Full Stack Developer",
           company: "Digital Solutions Ltd.",
-          location: "Toronto, CA",
           period: "Mar 2017 - Dec 2019",
           description: "Developed and maintained multiple client websites using a variety of technologies including JavaScript, PHP, and MySQL. Implemented responsive designs and improved site performance, resulting in a 40% increase in page load speed. Worked closely with UX/UI designers to implement pixel-perfect designs and ensure optimal user experience across all devices.",
           image: makeItMVP
@@ -43,7 +41,6 @@ const ExperienceSection = forwardRef((props, ref) => {
         {
           title: "Junior Developer",
           company: "Startup Ventures",
-          location: "Toronto, CA",
           period: "Jun 2015 - Feb 2017",
           description: "Assisted in the development of a social media management platform using Ruby on Rails and PostgreSQL. Gained experience in agile methodologies and collaborative development practices. Participated in daily stand-ups and sprint planning sessions, contributing to the team's overall productivity and project success.",
           image: TMULogo
@@ -62,7 +59,6 @@ const ExperienceSection = forwardRef((props, ref) => {
     <StyledExperienceSection id="experience" ref={ref}>
             <span><BriefcaseOutline/><h2>My Experience</h2></span>
             <CardsContainer>
-              <GradientOverlay />
               {jobHistory.map((job, i) => (
                 <JobHistoryItem key={i}>
                     <VerticalLine>
@@ -77,14 +73,7 @@ const ExperienceSection = forwardRef((props, ref) => {
                             <TextHeaderContainer>
                                 <h3>{job.title}</h3>
                                 <p>{job.company}</p>
-                                <span>
-                                    <LocationPin />
-                                    <p>{job.location}</p>
-                                </span>
-                                <span>
-                                    <CalendarOutline />
-                                    <p>{job.period}</p>
-                                </span>
+                                <p>{job.period}</p>
                             </TextHeaderContainer>
                         </CardHeader>
                         <CardContent expandedJob={expandedJobs[i]}>
@@ -92,7 +81,7 @@ const ExperienceSection = forwardRef((props, ref) => {
                                 {job.description}
                             </p>
                             {job.description.length > 100 && (
-                                <button
+                                <ExpandButton
                                     onClick={() => toggleJobDescription(i)}
                                     aria-expanded={expandedJobs[i]}
                                     aria-controls={`job-description-${i}`}
@@ -108,7 +97,7 @@ const ExperienceSection = forwardRef((props, ref) => {
                                         <StyledChevronDown />
                                     </>    
                                     )}
-                                </button>
+                                </ExpandButton>
                             )}
                         </CardContent>
                     </JobHistoryCard>

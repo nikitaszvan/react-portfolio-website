@@ -9,6 +9,7 @@ import {
 } from "./TestimonialsCard.styles";
 import { Link } from "react-router-dom";
 import { ReactComponent as ChevronRight } from "src/assets/svgs/ChevronRight.svg";
+import { ReactComponent as ArrowUpRight } from "src/assets/svgs/ArrowUpRight.svg";
 
 
 export type Testimonial = {
@@ -46,8 +47,8 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial; ind
           <Link
                 to={testimonial.link}
             >
-                Read Full
-                <ChevronRight/>
+                Read on LinkedIn
+                <ArrowUpRight />
             </Link>
         </MainCard>
     </StyledTestimonialCard>
