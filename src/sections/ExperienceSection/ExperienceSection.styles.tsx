@@ -179,8 +179,10 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
     position: relative;
 
     > p {
-        color: var(--black-muted-softer);
+        color: var(--black-muted);
         line-height: 1.625;
+        font-weight: 350;
+        font-size: 1rem;
         
         ${(props => !props.expandedJob && 
         `
@@ -190,11 +192,6 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
             -webkit-line-clamp: 2;
         `
         )}
-
-        @media (max-width: 767px) {
-            font-size: 0.875rem;
-            font-weight: 400;
-        }
     }
 `
 

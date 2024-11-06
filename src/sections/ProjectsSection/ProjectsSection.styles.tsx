@@ -78,9 +78,10 @@ export const CardHeader = styled.div`
         font-size: 1rem;
         line-height: 1.25rem; 
         margin-bottom: 1.5rem;
+        font-weight: 350;
 
         @media (max-width: 767px) {
-            font-size: 0.875rem;
+            font-size: 1rem;
         }
     }
 `

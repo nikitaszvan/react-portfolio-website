@@ -213,13 +213,9 @@ export const StackDescription = styled.p`
     display: inline !important;
     margin: 0;
     white-space: pre-wrap;
-    line-height: 1.4rem;
+    line-height: 1.5rem;
     font-weight: 300;
-    padding-inline: 1.3rem;
-
-    @media (max-width: 767px) {
-        font-size: 0.875rem;
-    }
+    padding-inline: 1.5rem;
 
     > span {
         font-weight: 600;
