@@ -6,6 +6,7 @@ interface NavLinkProps {
     activeIndex: number;
 }
 
+
 export const StyledSideNavigation = styled.nav`
     display: flex;
     flex-direction: column;
@@ -34,7 +35,7 @@ export const NavLink = styled(({ isActive, activeIndex, ...props }: NavLinkProps
     font-weight: ${(props) => props.isActive ? '600' : '400'};
     color: ${(props) => props.isActive ? 'var(--accent-color)' : 'var(--black-muted)'};
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: margin 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
 
     ${(props) => props.isActive && 'margin-block: calc((100vh - 6rem) / 2.8)'};

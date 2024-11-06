@@ -1,20 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { ReactComponent as ChevronDown } from "src/assets/svgs/ChevronDown.svg";
 
-const generateKeyframes = () => {
-    let keyframes;
-
-    for (let i = 0; i <= 100; i++) {
-      if (i <= 100) {
-        keyframes += `  ${i}% { background-image: linear-gradient(to right, var(--accent-color) ${i}%, var(--black-muted) ${i}%)}\n`;
-      }
-    }
-    return keyframes;
-  };
-
-const buildColor = keyframes`
-    ${generateKeyframes()}
-`
 
 export const StyledExperienceSection = styled.section`
     margin-inline: auto;
@@ -33,10 +19,6 @@ export const StyledExperienceSection = styled.section`
             width: auto;
             fill: var(--accent-color);
             cursor: pointer;
-
-            &:hover ~ h2 {
-                animation: ${buildColor} 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            }
         }
 
         > h2 {
@@ -44,12 +26,7 @@ export const StyledExperienceSection = styled.section`
             font-weight: 600;
             text-align: center;
             margin: 0;
-
-            background-image: linear-gradient(to top, var(--black-muted), var(--black-muted));
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            -webkit-text-fill-color: transparent;
+            color: var(--black-muted);
         }
     }
 `
@@ -109,6 +86,7 @@ export const Circle = styled.div<{ translateDown: boolean }>`
 `
 
 export const JobHistoryCard = styled.div`
+    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     padding: 1.5rem;
     border-radius: calc(0.5rem + 4px);

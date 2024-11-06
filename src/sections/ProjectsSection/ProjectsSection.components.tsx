@@ -89,10 +89,10 @@ const ProjectsSection = forwardRef((props, ref) => {
               <CardContent>
                 <TagContainer>
                   {project.technologies.map((tech) => (
-                    <div key={tech} 
+                    <span key={tech} 
                     >
                       {tech}
-                    </div>
+                    </span>
                   ))}
                 </TagContainer>
                 <ButtonContainer>

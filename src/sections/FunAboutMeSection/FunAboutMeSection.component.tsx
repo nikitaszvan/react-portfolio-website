@@ -58,7 +58,7 @@ const FunAboutMeSection = forwardRef((props, ref) => {
         <span><PaperPlane/><h2>Fun</h2></span>
         <StyledHeader>
             <h2>When I'm Not Coding...</h2>
-            <p>Here's a glimpse into my world outside of work</p>
+            <p>Hover to get a glimpse into my world beyond work.</p>
         </StyledHeader>
         <HobbiesContainer>
         {hobbies.map((hobby, index) => (

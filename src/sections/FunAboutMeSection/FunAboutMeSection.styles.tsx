@@ -35,14 +35,14 @@ export const StyledHeader = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
-    gap: 1rem;
+    gap: 0.4rem;
 
     > * {
         margin: 0;
     }
 
     > h2 {
-        font-size: 1.875rem;
+        font-size: 1.6rem;
         font-weight: 600;
         color: var(--black-muted);
     }
@@ -74,11 +74,9 @@ export const HobbyColumn = styled.div`
     align-items: center;
 
     > p {
-        color: var(--accent-color);
+        color: var(--black);
         font-weight: 500;
-        transition: all 0.3s;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        font-family: 'Montserrat';
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 `
 
@@ -101,6 +99,10 @@ export const IconContainer = styled.div`
 
     &:hover > svg {
         transform: scale(1.1);
+    }
+
+    &:hover ~ p {
+        color: var(--accent-color);
     }
 
     > svg {

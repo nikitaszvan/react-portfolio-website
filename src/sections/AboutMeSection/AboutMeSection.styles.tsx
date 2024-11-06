@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 import { ReactComponent as ChevronRight} from "../../assets/svgs/ChevronRight.svg";
 
 export const StyledAboutMeSection = styled.div`
@@ -35,10 +36,10 @@ export const StyledAboutMeSection = styled.div`
 export const TechStackContainer = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1.3rem;
     border: 1px solid var(--border-color);
-    padding: 1rem;
     border-radius: 0.5rem;
+    padding-bottom: 1.3rem;
 
     &:hover {
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -65,6 +66,7 @@ export const TechStackIcon = styled.div`
     > svg {
         width: 90%;
         color: var(--accent-color);
+
     }
 `
 
@@ -73,13 +75,20 @@ export const TechStackHeader = styled.div<{ isExpanded: boolean }>`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 0.8rem;
+    cursor: pointer;
+    padding: 0.8rem 1.6rem;
     ${(props => !props.isExpanded && 'border-bottom: 0.5px solid var(--border-color)')};
+    ${(props => props.isExpanded && 'background-color: var(--base-color);')};
+
+    &:hover {
+        background-color: var(--base-color);
+    }
 
 
     > svg {
        height: 80%;
        aspect-ratio: 1/1;
+       ${(props => props.isExpanded && 'fill: var(--bg);')};
     }
 
     > h3 {
@@ -108,7 +117,6 @@ export const ToggleDetailsButton = styled.button`
     white-space: nowrap;
     font-size: 0.875rem;
     font-weight: 500;
-    transition: background-color 0.3s;
     outline: none;
     position: relative;
     height: 2.25rem;
@@ -119,64 +127,85 @@ export const ToggleDetailsButton = styled.button`
     cursor: pointer;
 `
 
-export const StyledChevronRight = styled(ChevronRight)<{rotateArrow: boolean}>`
+export const StyledChevronRight = styled(ChevronRight)<{isExpanded: boolean}>`
     margin-left: 0.25rem;
-    height: 0.6rem;
-    width: 0.6rem;
+    height: 0.8rem;
+    width: 0.8rem;
     transition: transform 0.3s;
     fill: var(--accent-color);
-    transform: ${(props => props.rotateArrow ? 'rotate(90deg)' : 'rotate(0deg)')};
+    transform: ${(props => props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
 `
 
 export const TagsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-
-    > span {
-        color: var(--black-muted);
-        font-weight: 400;
-        font-size: 0.8rem;
-        line-height: 1rem;
-        padding: 0.125rem 0.625rem;
-        background-color: var(--base-color);
-        border-radius: 9999px;
-        align-items: center;
-        display: inline-flex; 
-    }
+    padding-inline: 1.3rem;
 `;
 
-export const ExpandButton = styled.button`
-    width: 100%;
-    color: var(--bg);
-    font-size: 0.9rem;
-    background-color: var(--accent-color);
-    transition: color 0.3s;
-    border: none;
-    padding-block: 1rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.5rem;
-    cursor: pointer;
 
-    > * {
-        fill: var(--bg);
-    }
+export const StyledLink = styled(Link)`
+    color: var(--black-muted);
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1rem;
+    font-weight: 500;
+    padding: 0.2rem 0.8rem;
+    background-color: var(--base-color);
+    border-radius: 9999px;
+    align-items: center;
+    display: inline-flex; 
+    text-decoration: none;
+    position: relative;
 
     &:hover {
-        color: var(--black);
+        background-color: var(--accent-color);
+        color: var(--bg);
+        padding-right: 1.5rem;
+    }
 
-        > * {
-            fill: var(--black);
-        }
+    &:hover > span {
+        background-color: var(--accent-color);
+    }
+
+    &:hover > svg {
+        transform: translateX(-54%);
+        opacity: 1;
+    }
+
+    &:hover > span {
+        margin-right: 0.2rem;
+    }
+
+    > span {
+        transition: margin 0.3s ease-in-out; 
+        background-color: var(--base-color);
+        z-index: 10;
+    }
+
+    > svg {
+        position: absolute;
+        right: 0;
+        width: 0.9rem;
+        height: 0.9rem;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; 
     }
 `
 
-export const StyledChevronDown = styled(ChevronRight)<{rotateArrow: boolean}>`
-    height: 0.7rem;
-    width: 0.7rem;
-    transform: ${(props => props.rotateArrow ? 'rotate(90deg)' : 'rotate(270deg)')};
-    transition: transform 0.3s, fill 0.3s;
+export const StackDescription = styled.p`
+    font-size: 1rem;
+    color: var(--black);
+    display: inline !important;
+    margin: 0;
+    white-space: pre-wrap;
+    line-height: 1.4rem;
+    font-weight: 300;
+    padding-inline: 1.3rem;
+
+    > span {
+        font-weight: 600;
+        color: var(--black-muted);
+    }
 `

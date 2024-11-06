@@ -89,8 +89,7 @@ export const TagContainer = styled.div`
     flex-wrap: wrap;
     gap: 0.5rem;
 
-    > div {
-        transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    > span {
         color: var(--black-muted);
         font-weight: 500;
         font-size: 0.75rem;
@@ -108,7 +107,6 @@ export const ButtonContainer = styled.div`
     gap: 0.5rem;
 
     > button {
-        transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
         color: var(--bg);
         font-weight: 500;
         font-size: 0.875rem;
@@ -124,11 +122,11 @@ export const ButtonContainer = styled.div`
         cursor: pointer;
         border: none;
 
-        &:hover {
+        &:nth-of-type(1):hover {
             color: var(--accent-color);
             background-color: var(--bg);
             border: 0.1rem solid var(--accent-color);
-            padding-inline: 0.65rem;
+            padding-inline: 0.655rem;
         }
 
 

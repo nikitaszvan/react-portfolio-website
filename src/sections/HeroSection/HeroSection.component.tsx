@@ -16,7 +16,7 @@ const HeroSection = forwardRef((props, ref) => {
         />
         <HeroTextContainer>
             <h1>
-                I'm Nikita – <span>designer and engineer</span>
+                I'm Nikita – <span>a front-end developer.</span>
             </h1>
             <p>
                 I love building products. I have a decade of experience with over
