@@ -37,7 +37,7 @@ export const NavLink = styled(({ isActive, activeIndex, ...props }: NavLinkProps
     width: fit-content;
     font-size: ${(props) => props.isActive ? '2rem' : '1.3rem'};
     font-weight: ${(props) => props.isActive ? '600' : '400'};
-    color: ${(props) => props.isActive ? 'var(--accent-color)' : 'var(--black-muted)'};
+    color: ${(props) => props.isActive ? 'var(--accent-color)' : 'var(--black-muted-softer)'};
     text-decoration: none;
     transition: margin 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 

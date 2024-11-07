@@ -37,7 +37,7 @@ function App() {
         <TestimonialsSection ref={sectionRefs.testimonials} />
       </MainContentContainer>
       <DisplaySettingsSection />
-      <MobileMenuSection />
+      <MobileMenuSection sectionRefs={sectionRefs} />
     </AppContainer>
   );
 }

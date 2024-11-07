@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, RefObject } from 'react';
 
 import {
     NavLink,
@@ -8,7 +8,7 @@ import {
 
 type SideNavigationProps = {
   sectionRefs: {
-    [key: string]: React.RefObject<HTMLElement>
+    [key: string]: RefObject<HTMLElement>
   };
 }
 
