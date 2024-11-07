@@ -130,8 +130,8 @@ const MobileMenuSection: React.FC<SideNavigationProps> = ({ sectionRefs }) => {
   return (
     <MobileMenuContainer>
         <MenuButton onClick={toggleMenu} isOpen={isOpen}>
-        {isOpen ? <CloseIcon /> : <MenuIcon />}
-      </MenuButton>
+            {isOpen ? <CloseIcon /> : <MenuIcon />}
+        </MenuButton>
       <Overlay isOpen={isOpen}/>
       <SideNavContainer isOpen={isOpen}>
         <NavLinkContainer>

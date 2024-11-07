@@ -24,5 +24,6 @@ export const MainContentContainer = styled.div`
 
     @media (max-width: 1023px) {
         width: 100%;
+        margin-top: 1rem;
     }
 `

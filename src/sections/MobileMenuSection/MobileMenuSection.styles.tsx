@@ -27,8 +27,8 @@ export const MenuButton = styled.button<{ isOpen: boolean }>`
     z-index: 150;
 
     > svg {
-        width: 2rem;
-        height: 2rem;
+        width: 2.2rem;
+        height: 2.2rem;
     }
 `;
 
@@ -50,8 +50,8 @@ export const SideNavContainer = styled.div<{ isOpen: boolean }>`
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
-  width: 60%;
+  height: 100%;
+  width: 75%;
   background-color: var(--bg);
   display: flex;
   flex-direction: column;
@@ -151,18 +151,17 @@ export const ToggleThumb = styled.span.attrs<CustomButtonProps>({})`
 export const ColorOptionContainer = styled.div`
     display: flex;
     gap: 0.8rem;
+    width: 100%;
+    height: 30%;
     align-items: center;
     margin-top: 0.5rem;
     margin-left: 0.2rem;
-
-    > * {
-        width: 2rem;
-        height: 2rem;
-    }
 `
 
 export const ColorOption = styled(GradientCircle)<{ isSelected: boolean }>`
     cursor: pointer;
+    width: 2rem;
+    height: 2rem;
 
     ${(props => props.isSelected &&
         `outline: 2px solid var(--black);
@@ -174,7 +173,6 @@ export const SocialsContainer = styled.div`
     margin-top: auto;
     display: flex;
     gap: 0.75rem;
-
 
     > a {
         > svg {

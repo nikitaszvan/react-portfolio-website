@@ -15,7 +15,7 @@
 }
 
 @font-face {
-    
+    font-family: 'Montserrat';
     src: url('../assets/fonts/Montserrat-VariableFont_wght.woff2') format('woff2-variations');
     font-weight: 100 900;
     font-style: normal;
@@ -136,7 +136,7 @@ button {
         --gray-p: #98989e;
         --gray-blue-nav: #889191;
         --border-width: 2px;
-
+        
         --accent-color: #426ad7;
         --base-color: #1e3048; 
         --border-color: #3c4953;
