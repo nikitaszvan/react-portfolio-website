@@ -28,9 +28,9 @@ export const StyledTestimonialsSection = styled.div`
 `
 
 export const CardsContainer = styled.div`
-    gap: 1.5rem;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    gap: 1.75rem;
 
     @media (min-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);

@@ -200,7 +200,7 @@ export const ImageContainer = styled.div<{isVisible: boolean}>`
     top: 100%;
     left: 50%;
     transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: opacity, transform;
+    transition-property: opacity, transform, z-index;
     display: flex;
     gap: 0.5rem;
     z-index: 3;

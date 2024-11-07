@@ -10,6 +10,7 @@ import ProjectsSection from "./sections/ProjectsSection/ProjectsSection.componen
 import ExperienceSection from "./sections/ExperienceSection/ExperienceSection.component";
 import TestimonialsSection from "./sections/TestimonialsSection/TestimonialsSection.components";
 import DisplaySettingsSection from "./sections/DisplaySettingsSection/DisplaySettingsSection.component";
+import MobileMenuSection from "./sections/MobileMenuSection/MobileMenuSection.component";
 import { useRef } from "react";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <TestimonialsSection ref={sectionRefs.testimonials} />
       </MainContentContainer>
       <DisplaySettingsSection />
+      <MobileMenuSection />
     </AppContainer>
   );
 }

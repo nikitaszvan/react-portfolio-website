@@ -1,5 +1,7 @@
 import { FC, ReactNode, useEffect, useState } from 'react';
 
+import { MobileMenuContainer } from "./MobileMenuSection.styles";
+
 import { ReactComponent as MenuIcon } from "src/assets/svgs/MenuIcon.svg";
 import { ReactComponent as CloseIcon } from "src/assets/svgs/CloseIcon.svg";
 import { ReactComponent as GitHubFilled } from "src/assets/svgs/GitHubFilled.svg";
@@ -80,7 +82,7 @@ const Switch: FC<{
   )
 }
 
-export default function Component() {
+const MobileMenuSection = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isDark, setIsDark] = useState(false)
   const [theme, setTheme] = useState<ThemeColor>("blue")
@@ -99,7 +101,7 @@ export default function Component() {
   }
 
   return (
-    <>
+    <MobileMenuContainer>
       <button
         // variant="outline"
         // size="icon"
@@ -202,6 +204,8 @@ export default function Component() {
           </div>
         </div>
       </Sheet>
-    </>
+    </MobileMenuContainer>
   )
-}
+};
+
+export default MobileMenuSection;
