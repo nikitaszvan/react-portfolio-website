@@ -2,7 +2,7 @@ import {
     AccentBorder,
     CardHeader,
     HeaderText,
-    // IconContainer,
+    IconContainer,
     ImageContainer,
     MainCard,
     StyledTestimonialCard
@@ -10,6 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import { ReactComponent as ChevronRight } from "src/assets/svgs/ChevronRight.svg";
 import { ReactComponent as ArrowUpRight } from "src/assets/svgs/ArrowUpRight.svg";
+import { ReactComponent as QuoteIcon } from "src/assets/svgs/QuoteIcon.svg";
 
 
 export type Testimonial = {
@@ -19,21 +20,19 @@ export type Testimonial = {
     company: string;
     testimonial: string;
     image: string;
-    link: string;
 };
 
 const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial; index: number }) => {
     
     return (
     <StyledTestimonialCard>
-        <AccentBorder/>
         <MainCard>
           <CardHeader>
             <ImageContainer>
-              <img src='https://i.pravatar.cc/300' alt={testimonial.name} />
-              {/* <IconContainer>
+              <img src={testimonial.image} alt={testimonial.name} />
+              <IconContainer>
                 <QuoteIcon/>
-              </IconContainer> */}
+              </IconContainer>
             </ImageContainer>
             <HeaderText>
                 <h3>{testimonial.name}</h3>
@@ -42,10 +41,12 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial; ind
             </HeaderText>
           </CardHeader>
           <blockquote>
-            <p>{testimonial.testimonial}</p>
+            <p>"{testimonial.testimonial}"</p>
           </blockquote>
           <Link
-                to={testimonial.link}
+              to='https://www.linkedin.com/in/nikita-van-162b9417b/details/recommendations'
+              target="_blank"
+              rel="noopener noreferrer"
             >
                 Read on LinkedIn
                 <ArrowUpRight />

@@ -56,7 +56,7 @@ export const HeroTextContainer = styled.div`
         font-size: 1.4rem;
         color: var(--black-muted-softer);
         font-weight: 350;
-        font-style: italic;
+        
 
         @media (max-width: 767px) {
             font-size: 1.125rem;

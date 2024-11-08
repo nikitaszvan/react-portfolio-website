@@ -42,8 +42,8 @@ export const Overlay = styled.div<{ isOpen: boolean }>`
   pointer-events: ${({ isOpen }) => (isOpen ? 'all' : 'none')};
   transition: opacity 0.3s ease;
   z-index: 50;
-  visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};  /* Make sure it's not blocking interactions when hidden */
-  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};  /* Smooth transition */
+  visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
 `;
 
 export const SideNavContainer = styled.div<{ isOpen: boolean }>`
@@ -52,6 +52,7 @@ export const SideNavContainer = styled.div<{ isOpen: boolean }>`
   right: 0;
   height: 100%;
   width: 75%;
+  max-width: 31.25rem;
   background-color: var(--bg);
   display: flex;
   flex-direction: column;

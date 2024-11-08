@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { ReactComponent as ChevronDown } from "src/assets/svgs/ChevronDown.svg";
 
 
@@ -100,6 +100,9 @@ export const Circle = styled.div<{ translateDown: boolean }>`
 `
 
 export const JobHistoryCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     padding: 1.5rem;
@@ -119,6 +122,7 @@ export const CardHeader = styled.div`
     align-items: center;
     gap: 1.5rem;
     height: 6rem;
+    padding-inline: 0.8rem;
 
     @media (max-width: 767px) {
         height: 4.5rem;
@@ -130,6 +134,7 @@ export const CardHeader = styled.div`
         object-fit: cover;
         display: block;
         vertical-align: middle;
+        border-radius: 0.5rem;
     }
 `
 
@@ -177,21 +182,49 @@ export const TextHeaderContainer = styled.div`
 
 export const CardContent = styled.div<{expandedJob: boolean}>`
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-inline: 1.5rem;
+    height: 100%;
+
+    ${(props => !props.expandedJob && 
+        `
+            height: 8.5rem;
+            overflow: hidden;
+        `
+    )};
+`
+
+export const GradientOverlay = styled.div<{expandedJob: boolean}>`
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 6rem;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--bg));
+
+    ${({expandedJob}) => expandedJob && 'display: none;'}
+`
+
+export const ContentDescription = styled.div<{expandedJob: boolean}>`
+    display: flex;
+
+    > svg {
+        width: 0.6rem;
+        height: 0.6rem;
+        fill: var(--accent-color);
+        margin-right: 0.8rem;
+        margin-top: 0.5rem;
+    }
 
     > p {
         color: var(--black-muted);
         line-height: 1.625;
         font-weight: 350;
         font-size: 1rem;
-        
-        ${(props => !props.expandedJob && 
-        `
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-        `
-        )}
+        margin: 0;
+        flex: 1;
     }
 `
 
@@ -203,7 +236,6 @@ export const ExpandButton = styled.button`
     gap: 0.4rem;
     align-items: center;
     display: flex;
-    margin-top: 0.5rem;
     cursor: pointer;
     border: none;
     background-color: transparent;
@@ -225,5 +257,4 @@ export const StyledChevronDown = styled(ChevronDown)<{ rotateArrow: boolean }>`
     }
 
     transform: ${(props => props.rotateArrow ? 'rotate(-180deg)' : 'rotate(0deg)' )};
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 `

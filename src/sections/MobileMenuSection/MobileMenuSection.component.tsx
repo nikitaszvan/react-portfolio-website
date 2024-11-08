@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, FC, RefObject } from 'react';
 import { Link } from 'react-router-dom';
 import { 
     ColorOption,
@@ -24,11 +24,11 @@ import { ReactComponent as EnvelopeFilled } from "src/assets/svgs/EnvelopeFilled
 
 type SideNavigationProps = {
     sectionRefs: {
-        [key: string]: React.RefObject<HTMLElement>
+        [key: string]: RefObject<HTMLElement>
     };
 };
 
-const MobileMenuSection: React.FC<SideNavigationProps> = ({ sectionRefs }) => {
+const MobileMenuSection: FC<SideNavigationProps> = ({ sectionRefs }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isDark, setIsDark] = useState(() => {
     const savedMode = localStorage.getItem("data-theme");

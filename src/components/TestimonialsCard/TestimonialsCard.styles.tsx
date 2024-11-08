@@ -20,7 +20,6 @@ export const StyledTestimonialCard = styled.div`
     position: relative;
     padding: 2rem;
     animation: ${fadeInUp} 0.5s forwards;
-    height: fit-content;
     border: var(--border-width) solid var(--border-color);
     border-top: none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -31,7 +30,7 @@ export const AccentBorder = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 0.5rem;
+    height: 0.2rem;
     background-color: var(--accent-color);
 `
 
@@ -39,6 +38,7 @@ export const MainCard = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    height: 100%;
 
 
     > blockquote {
@@ -54,13 +54,16 @@ export const MainCard = styled.div`
     }
 
     > a {
-        margin-top: 1rem;
         display: inline-flex;
         align-items: center;
         color: var(--accent-color); 
         text-decoration: none;
         font-weight: 400;
-        font-style: italic;
+        margin-top: auto;
+
+        &:hover {
+            text-decoration: underline;
+        }
 
         > svg {
             width: 1rem;
@@ -88,28 +91,28 @@ export const ImageContainer = styled.div`
         height: 5.5rem;
         width: 5.5rem;
         border-radius: 50%;
-        border: 0.3rem solid var(--bg);
+        border: 0.2rem solid var(--accent-color);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 `
 
-// export const IconContainer = styled.div`
-//     position: absolute;
-//     bottom: 0;
-//     right: 0;
-//     background-color: transparent;
-//     border-radius: 50%;
-//     padding: 0.25rem;
-//     aspect-ratio: 1/1;
-//     display: flex;
-//     align-items: center;
+export const IconContainer = styled.div`
+    position: absolute;
+    bottom: 0.2rem;
+    right: 0;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    padding: 0.3rem;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
 
-//     > svg {
-//         width: 1rem;
-//         height: 1rem;
-//         color: var(--accent-color); 
-//     }
-// `
+    > svg {
+        width: 0.9rem;
+        height: 0.9rem;
+        color: var(--bg); 
+    }
+`
 
 export const HeaderText = styled.div`
     margin-left: 1rem;
@@ -122,7 +125,7 @@ export const HeaderText = styled.div`
     }
 
     > h3 {
-        font-size: 1.25rem;
+        font-size: 1.4rem;
         font-weight: 600;
         color: var(--black-muted);
         margin-bottom: 0.1rem;

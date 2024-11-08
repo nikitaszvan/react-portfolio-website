@@ -68,7 +68,7 @@ export const StyledHeader = styled.div`
         color: var(--black-muted-softer);
         font-weight: 350;
         whitespace: prewrap;
-        font-style: italic;
+        
 
         @media (max-width: 767px) {
             font-size: 1rem;

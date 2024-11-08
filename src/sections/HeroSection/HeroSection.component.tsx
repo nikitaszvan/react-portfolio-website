@@ -4,7 +4,7 @@ import {
     StyledHeroSection,
     } from "./HeroSection.styles";
 
-import HeroImageSrc from "../../assets/images/headshot.jpg";
+import HeroImageSrc from "../../assets/images/portfolio-headshot.jpg";
 import { forwardRef } from "react";
 
 const HeroSection = forwardRef((props, ref) => {
@@ -16,11 +16,10 @@ const HeroSection = forwardRef((props, ref) => {
         />
         <HeroTextContainer>
             <h1>
-                I'm Nikita – <span>a front-end developer.</span>
+                I'm Nikita – <span>a full-stack developer.</span>
             </h1>
             <p>
-                I love building products. I have a decade of experience with over
-                15 digital products.
+                I love the challenge of building beautiful, functional applications and embrace learning every step of the way.
             </p>
         </HeroTextContainer>
     </StyledHeroSection>
