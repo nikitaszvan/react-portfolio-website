@@ -156,7 +156,7 @@ export const IconContainer = styled.div`
     transition: transform 0.3s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 9999px;
-    border: var(--border-width) solid var(--border-color);
+    border: 2px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -170,7 +170,7 @@ export const IconContainer = styled.div`
 
     &:hover {
         transform: scale(1.1);
-        border: var(--border-width) solid var(--accent-color);
+        border: 2px solid var(--accent-color);
     }
 
     &:hover > svg {

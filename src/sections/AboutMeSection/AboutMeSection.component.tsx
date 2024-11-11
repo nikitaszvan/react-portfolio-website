@@ -78,6 +78,7 @@ const AboutMeSection = forwardRef((props, ref) => {
       technologies: [
         {label: "PostgreSQL", link: "https://www.postgresql.org"},
         {label: "Firebase Realtime Database", link: "https://firebase.google.com/docs/database"},
+        {label: "Firestore Cloud Database", link: "https://cloud.google.com/firestore/docs"},
       ],
       description:
         <>

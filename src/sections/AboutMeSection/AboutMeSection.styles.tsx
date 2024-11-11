@@ -45,7 +45,7 @@ export const TechStackContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
-    border: var(--border-width) solid var(--border-color);
+    border: 2px solid var(--border-color);
     border-radius: 0.5rem;
     padding-bottom: 1.3rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -85,7 +85,10 @@ export const TechStackHeader = styled.div<{ isExpanded: boolean }>`
     align-items: center;
     cursor: pointer;
     padding: 0.8rem 1.6rem;
-    ${(props => !props.isExpanded && 'border-bottom: 0.5px solid var(--border-color)')};
+    border-top-left-radius: calc(0.5rem - 2px);
+    border-top-right-radius: calc(0.5rem - 2px);
+
+    ${(props => !props.isExpanded && 'border-bottom: 0.5px solid var(--border-color-stays)')};
     ${(props => props.isExpanded && 'background-color: var(--base-color);')};
 
     &:hover {
@@ -153,6 +156,10 @@ export const TagsContainer = styled.div`
     flex-wrap: wrap;
     gap: 0.5rem;
     padding-inline: 1.3rem;
+
+    &:has(:hover) {
+        padding-right: 0.8rem;
+    }
 `;
 
 

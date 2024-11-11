@@ -36,28 +36,35 @@ export const StyledProjectsSection = styled.section`
     }
 `
 
-export const CardContainer = styled.div`
-    display: grid;
-    gap: 1.5rem; 
-    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-`
-
 export const ProjectCard = styled.div`
     box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    border: var(--border-width) solid var(--border-color);
+    border: 2px solid var(--border-color);
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+`
+
+export const ImageContainer = styled.div`
+    zoom: 150%;
+    width: 100%;
+    height: 13rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background-color: white;
+
+    &:hover > img {
+        opacity: 0.65;
+        transform: scale(1.1);
+    }
 
     > img {
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem; 
         object-fit: cover;
+        opacity: 1;
         width: 100%;
-        height: 12rem;
-        margin-bottom: 1.5rem;
+        object-position: 50% 50%;
+        transition: opacity 0.5s ease, transform 0.5s ease;
     }
 `
 
@@ -75,7 +82,7 @@ export const CardHeader = styled.div`
 
     > p {
         color: var(--black-muted-softer);
-        font-size: 1rem;
+        font-size: 0.94rem;
         line-height: 1.25rem; 
         margin-bottom: 1.5rem;
         font-weight: 350;
@@ -156,10 +163,10 @@ export const ButtonContainer = styled.div`
 
     > button:nth-of-type(2), > button:nth-of-type(3) {
         background-color: var(--bg);
-        border: 1px solid var(--border-color); 
+        border: 1px solid var(--border-color-stays); 
 
         &:hover {
-            background-color: var(--border-color);
+            background-color: var(--border-color-stays);
         }
     }
 

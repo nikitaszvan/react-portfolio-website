@@ -1,5 +1,4 @@
 import { 
-    AccentBorder,
     CardHeader,
     HeaderText,
     IconContainer,
@@ -14,7 +13,6 @@ import { ReactComponent as QuoteIcon } from "src/assets/svgs/QuoteIcon.svg";
 
 
 export type Testimonial = {
-    id: number;
     name: string;
     position: string;
     company: string;
@@ -22,7 +20,7 @@ export type Testimonial = {
     image: string;
 };
 
-const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial; index: number }) => {
+const TestimonialCard = ({ testimonial}: { testimonial: Testimonial}) => {
     
     return (
     <StyledTestimonialCard>

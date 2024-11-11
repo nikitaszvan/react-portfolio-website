@@ -1,9 +1,9 @@
 import { useState, forwardRef } from "react";
 import { 
     ButtonContainer,
-    CardContainer,
     CardContent,
     CardHeader,
+    ImageContainer,
     ProjectCard,
     StyledProjectsSection,
     TagContainer
@@ -11,8 +11,8 @@ import {
 
 import Dialog from "src/components/Dialog/Dialog.component";
 
-import Project1 from "src/assets/images/project1.png";
-import Project2 from "src/assets/images/project2.png";
+import InnolabShowcase from "src/assets/images/innolab-showcase.png";
+import CitizenshipWeb from "src/assets/images/citizenship-web.png";
 import Project3 from "src/assets/images/project3.png";
 
 import { ReactComponent as ExpandIcon } from "src/assets/svgs/ExpandIcon.svg";
@@ -33,11 +33,11 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce solution with user authentication, product management, and payment integration.",
-    longDescription: "This e-commerce platform provides a comprehensive solution for online retail. It features user authentication, product catalog management, shopping cart functionality, and secure payment processing using Stripe. The frontend is built with React for a responsive and interactive user interface, while the backend uses Node.js and Express to handle API requests and database operations. MongoDB is used as the database to store product and user information.",
-    imageUrl: Project1,
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    title: "Innolab: Hackathon Suite",
+    description: "Hackathon suite extension for tech enthusiasts, enabling event management from registration to feedback, fostering collaboration, skill-building, and networking.",
+    longDescription: "Collaborated with a multidisciplinary team to design and develop a hackathon suite as an extension of an existing platform, tailored for a focused community of tech enthusiasts. This suite enables end-to-end event management, including participant registration, project submissions, showcasing, and feedback—fostering skill-building, collaboration, and networking within the tech community.",
+    imageUrl: InnolabShowcase,
+    technologies: ["React", "Typescript", "Firestore Cloud Database", "Firebase Hosting", "Context API", "Tailwind", "shadcn/ui", "Miro", "Figma"],
     liveUrl: "https://example.com/ecommerce",
     githubUrl: "https://github.com/yourusername/ecommerce"
   },
@@ -46,7 +46,7 @@ const projects: Project[] = [
     title: "Weather App",
     description: "A responsive weather application that provides real-time weather data and forecasts.",
     longDescription: "This weather application offers users real-time weather information and forecasts for any location worldwide. It utilizes the OpenWeather API to fetch accurate and up-to-date weather data. The app is built with React and styled using Tailwind CSS, ensuring a responsive design that works well on both desktop and mobile devices. Users can search for locations, view current weather conditions, and see a 5-day forecast.",
-    imageUrl: Project2,
+    imageUrl: CitizenshipWeb,
     technologies: ["React", "OpenWeather API", "Tailwind CSS"],
     liveUrl: "https://example.com/weather-app",
     githubUrl: "https://github.com/yourusername/weather-app"
@@ -74,61 +74,61 @@ const ProjectsSection = forwardRef((props, ref) => {
 
   return (
     <StyledProjectsSection id="projects" ref={ref}>
-            <span><LightBulbOutlined/><h2>My Projects</h2></span>
-        <CardContainer>
-          {projects.map((project) => (
-            <ProjectCard key={project.id}>
-                <img
-                  src={project.imageUrl}
-                  alt={`${project.title} preview`}
-                />
-              <CardHeader>
-                    <h1>{project.title}</h1>
-                    <p>{project.description}</p>
-              </CardHeader>
-              <CardContent>
-                <TagContainer>
-                  {project.technologies.map((tech) => (
-                    <span key={tech} 
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </TagContainer>
-                <ButtonContainer>
-                    <button
-                        onClick={() => openDialog(project)}
-                    >
-                        Learn More
+      <span><LightBulbOutlined/><h2>My Projects</h2></span>
+      {projects.map((project) => (
+        <ProjectCard key={project.id}>
+            <ImageContainer>
+              <img
+                src={project.imageUrl}
+                alt={`${project.title} preview`}
+              />
+            </ImageContainer>
+          <CardHeader>
+                <h1>{project.title}</h1>
+                <p>{project.description}</p>
+          </CardHeader>
+          <CardContent>
+            <TagContainer>
+              {project.technologies.map((tech) => (
+                <span key={tech} 
+                >
+                  {tech}
+                </span>
+              ))}
+            </TagContainer>
+            <ButtonContainer>
+                <button
+                    onClick={() => openDialog(project)}
+                >
+                    Learn More
+                </button>
+
+                <Dialog
+                    isOpen={isDialogOpen}
+                    onClose={() => setIsDialogOpen(false)}
+                    title={selectedProject?.title}
+                >
+                    <p>{selectedProject?.longDescription}</p>
+                </Dialog>
+
+                {project.liveUrl && (
+                    <button>
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                            <ExpandIcon />
+                        </a>
                     </button>
-
-                    <Dialog
-                        isOpen={isDialogOpen}
-                        onClose={() => setIsDialogOpen(false)}
-                        title={selectedProject?.title}
-                    >
-                        <p>{selectedProject?.longDescription}</p>
-                    </Dialog>
-
-                    {project.liveUrl && (
-                        <button>
-                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                <ExpandIcon />
-                            </a>
-                        </button>
-                    )}
-                    {project.githubUrl && (
-                        <button>
-                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                <GitHubOutline />
-                            </a>
-                        </button>
-                    )}
-                </ButtonContainer>
-              </CardContent>
-            </ProjectCard>
-          ))}
-        </CardContainer>
+                )}
+                {project.githubUrl && (
+                    <button>
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <GitHubOutline />
+                        </a>
+                    </button>
+                )}
+            </ButtonContainer>
+          </CardContent>
+        </ProjectCard>
+      ))}
     </StyledProjectsSection>
   )
 });

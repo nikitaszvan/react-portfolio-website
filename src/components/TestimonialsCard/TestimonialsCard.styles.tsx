@@ -1,37 +1,16 @@
-import styled, { keyframes } from "styled-components";
-
-export const fadeInUp = keyframes`
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`
+import styled from "styled-components";
 
 export const StyledTestimonialCard = styled.div`
     background-color: var(--bg);
     border-radius: 1rem;
-    overflow: hidden;
     display: flex;
+    flex-shrink: 0;
     flex-direction: column;
+    width: 50%;
     position: relative;
     padding: 2rem;
-    animation: ${fadeInUp} 0.5s forwards;
     border: var(--border-width) solid var(--border-color);
-    border-top: none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-`
-
-export const AccentBorder = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0.2rem;
-    background-color: var(--accent-color);
 `
 
 export const MainCard = styled.div`

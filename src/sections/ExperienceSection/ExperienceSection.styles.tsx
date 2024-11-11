@@ -43,7 +43,7 @@ export const CardsContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.7rem;
 
     > div:last-of-type {
         padding-bottom: 0; 
@@ -101,41 +101,34 @@ export const Circle = styled.div<{ translateDown: boolean }>`
 
 export const JobHistoryCard = styled.div`
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     padding: 1.5rem;
+    gap: 1rem;
     border-radius: calc(0.5rem + 4px);
-    border: var(--border-width) solid var(--border-color);
+    border: 2px solid var(--border-color);
     margin-left: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 
     @media (max-width: 1023px) {
         margin: 0;
     }
 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-`
-
-export const CardHeader = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    height: 6rem;
-    padding-inline: 0.8rem;
-
-    @media (max-width: 767px) {
-        height: 4.5rem;
-    }
-
     > img {
-        height: 80%;
+        height: 6rem;
+        width: 6rem;
         aspect-ratio: 1/1;
         object-fit: cover;
         display: block;
         vertical-align: middle;
         border-radius: 0.5rem;
     }
+`
+
+export const CardHeader = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 `
 
 export const TextHeaderContainer = styled.div`
@@ -184,27 +177,37 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
-    padding-inline: 1.5rem;
-    height: 100%;
+    gap: 1.5rem;
+    padding-top: 0.8rem;
 
-    ${(props => !props.expandedJob && 
-        `
-            height: 8.5rem;
-            overflow: hidden;
-        `
-    )};
+    > p {
+        color: var(--black-muted);
+        line-height: 1.3;
+        font-weight: 350;
+        font-size: 1rem;
+        margin: 0;
+        flex: 1;
+    }
 `
 
-export const GradientOverlay = styled.div<{expandedJob: boolean}>`
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 6rem;
-    width: 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--bg));
+export const ContributionsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
 
-    ${({expandedJob}) => expandedJob && 'display: none;'}
+    > p {
+        color: var(--black-muted);
+        line-height: 1.625;
+        font-weight: 350;
+        font-size: 1rem;
+        margin: 0;
+        flex: 1;
+    }
+
+    > p:nth-of-type(2) {
+        color: var(--black-muted-softer);
+        font-size: 0.9rem;
+    }
 `
 
 export const ContentDescription = styled.div<{expandedJob: boolean}>`
@@ -220,7 +223,7 @@ export const ContentDescription = styled.div<{expandedJob: boolean}>`
 
     > p {
         color: var(--black-muted);
-        line-height: 1.625;
+        line-height: 1.3;
         font-weight: 350;
         font-size: 1rem;
         margin: 0;

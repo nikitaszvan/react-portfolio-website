@@ -27,12 +27,10 @@ export const StyledTestimonialsSection = styled.div`
     }
 `
 
-export const CardsContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1.75rem;
-
-    @media (min-width: 1024px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
+export const CardsContainer = styled.div<{itemsCount: number}>`
+    display: flex;
+    overflow-x: hidden;
+    transition: scroll-left 0.5s linear;
+    gap: 2rem;
+    padding-block: 2rem;
 `

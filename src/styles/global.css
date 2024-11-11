@@ -60,32 +60,36 @@ button {
     --gray-blue-nav: #717a7a;
     --accent-color: #2962ff; 
     --base-color: #e3f2fd; 
-    --border-color: #bbdefb;
-    --border-width: 0px;
+    --border-color-stays: #bbdefb;
+    --border-color: #bbdefb00;
 }
 
 [data-color-theme='purple'] {
     --accent-color: #9c27b0;
     --base-color: #f3e5f5;
-    --border-color: #e1bee7;
+    --border-color-stays: #e1bee7;
+    --border-color: #e1bee700;
 }
 
 [data-color-theme='green'] {
     --accent-color: #2e7d32;
     --base-color: #e8f5e9;
-    --border-color: #c8e6c9;
+    --border-color-stays: #c8e6c9;
+    --border-color: #c8e6c900;
 }
 
 [data-color-theme='orange'] {
     --accent-color: #f57c00; 
     --base-color: #fff3e0;
-    --border-color: #ffe0b2;
+    --border-color-stays: #ffe0b2;
+    --border-color: #ffe0b200;
 }
 
 [data-color-theme='red'] {
     --accent-color: #d50000; 
     --base-color: #ffebee;
-    --border-color: #ffcdd2;
+    --border-color-stays: #ffcdd2;
+    --border-color: #ffcdd200;
     
 }
 
@@ -96,34 +100,38 @@ button {
     --black-muted-softer: #ADB8C9;
     --gray-p: #98989e;
     --gray-blue-nav: #889191;
-    --border-width: 2px;
 
     --accent-color: #426ad7;
     --base-color: #1e3048; 
+    --border-color-stays: #3c4953;
     --border-color: #3c4953;
 }
 
 [data-color-theme='purple'][data-theme='dark'] {
     --accent-color: #9f68f8;
     --base-color: #322834;
+    --border-color-stays: #3D333F;
     --border-color: #3D333F;
 }
 
 [data-color-theme='green'][data-theme='dark'] {
     --accent-color: #2E7C32;
     --base-color: #1E271F;
+    --border-color--stays: #373E36;
     --border-color: #373E36;
 }
 
 [data-color-theme='orange'][data-theme='dark'] {
     --accent-color: #B34501;
     --base-color: #574C3C;
+    --border-color-stays: #373E36;
     --border-color: #373E36;
 }
 
 [data-color-theme='red'][data-theme='dark'] {
     --accent-color: #ab281f;
     --base-color: #302225;
+    --border-color--stays: #574547;
     --border-color: #574547;
 }
 
@@ -135,10 +143,10 @@ button {
         --black-muted-softer: #ADB8C9;
         --gray-p: #98989e;
         --gray-blue-nav: #889191;
-        --border-width: 2px;
         
         --accent-color: #426ad7;
         --base-color: #1e3048; 
+        --border-color-stays: #3c4953;
         --border-color: #3c4953;
         --accent-tag: #bfdbfe;
     }
