@@ -48,7 +48,7 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ sectionRefs }) => {
     sectionRefs[sectionId].current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const sections = ["Home", "About", "Fun", "Projects", "Experience", "Testimonials"];
+  const sections = ["Home", "About", "Fun", "Works", "Experience", "Testimonials"];
 
   return (
     <StyledSideNavigation>
@@ -58,7 +58,7 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ sectionRefs }) => {
                   key={index} 
                   to={`#${link}`} 
                   isActive={activeSection === link.toLowerCase()}
-                  activeIndex={sections.map(section => section.toLowerCase()).indexOf(activeSection)}
+                  activeIndex={activeSection}
                   onClick={() => scrollToSection(`${link.toLowerCase()}`)}
                 >
                   {link} 

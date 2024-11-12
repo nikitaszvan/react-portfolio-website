@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledProjectsSection = styled.section`
+export const StyledWorksSection = styled.section`
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -46,25 +46,48 @@ export const ProjectCard = styled.div`
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 `
 
-export const ImageContainer = styled.div`
-    zoom: 150%;
+export const ImageContainer = styled.div<{imagePosition: string}>`
     width: 100%;
-    height: 13rem;
+    height: 20rem;
     margin-bottom: 1rem;
-    overflow: hidden;
     background-color: white;
-
-    &:hover > img {
-        opacity: 0.65;
-        transform: scale(1.1);
-    }
+    position: relative;
+    overflow: hidden;
 
     > img {
         object-fit: cover;
-        opacity: 1;
+        ${({imagePosition}) => imagePosition && `object-position: ${imagePosition}`};
         width: 100%;
-        object-position: 50% 50%;
-        transition: opacity 0.5s ease, transform 0.5s ease;
+        height: 100%;
+        opacity: 1;
+        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-property: opacity, scale;
+
+        &:hover {
+            scale: 1.1;
+            opacity: 0.65;
+        }
+    }
+
+    > button {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border: none;
+        background-color: transparent;
+        padding: 0.75rem;
+        cursor: pointer;
+
+        &:hover > svg {
+            scale: 1.2;
+        }
+
+        svg {
+            fill: var(--black-muted);
+            width: 1.1rem;
+            height: 1.1rem; 
+            transition: scale 0.3s ease;
+        }
     }
 `
 
@@ -122,7 +145,7 @@ export const ButtonContainer = styled.div`
     display: flex;
     gap: 0.5rem;
 
-    > button {
+    > button, > a {
         color: var(--bg);
         font-weight: 500;
         font-size: 0.875rem;
@@ -137,31 +160,31 @@ export const ButtonContainer = styled.div`
         display: inline-flex;
         cursor: pointer;
         border: none;
+    }
 
-        &:nth-of-type(1):hover {
-            color: var(--accent-color);
-            background-color: var(--bg);
-            border: 0.1rem solid var(--accent-color);
-            padding-inline: 0.655rem;
-        }
+    > button:nth-of-type(1):hover {
+        color: var(--accent-color);
+        background-color: var(--bg);
+        border: 0.1rem solid var(--accent-color);
+        padding-inline: 0.655rem;
+    }
 
-        > a {
-            text-decoration: none; 
-            color: var(--black-muted);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+    > a {
+        text-decoration: none; 
+        color: var(--black-muted);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
 
-            > svg {
-                width: 1rem;
-                height: 1rem; 
-                fill: none;
-                stroke: var(--black-muted);
-            }
+        > svg {
+            width: 1rem;
+            height: 1rem; 
+            fill: none;
+            stroke: var(--black-muted);
         }
     }
 
-    > button:nth-of-type(2), > button:nth-of-type(3) {
+    > a:nth-of-type(1), > a:nth-of-type(2) {
         background-color: var(--bg);
         border: 1px solid var(--border-color-stays); 
 
@@ -170,7 +193,7 @@ export const ButtonContainer = styled.div`
         }
     }
 
-    > button:nth-of-type(2) {
+    > a:nth-of-type(1) {
         gap: 0.5rem;
 
         &:after {
@@ -183,7 +206,7 @@ export const ButtonContainer = styled.div`
         } 
     } 
 
-    > button:nth-of-type(3) {
+    > a:nth-of-type(2) {
         gap: 0.5rem;
 
         @media (max-width: 641px) {

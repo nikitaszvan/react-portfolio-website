@@ -6,7 +6,7 @@ import SideNavigation from "./sections/SideNavigation/SideNavigation.component";
 import HeroSection from "./sections/HeroSection/HeroSection.component";
 import AboutMeSection from "./sections/AboutMeSection/AboutMeSection.component";
 import FunAboutMeSection from "./sections/FunAboutMeSection/FunAboutMeSection.component";
-import ProjectsSection from "./sections/ProjectsSection/ProjectsSection.components";
+import WorksSection from "./sections/WorksSection/WorksSection.component";
 import ExperienceSection from "./sections/ExperienceSection/ExperienceSection.component";
 import TestimonialsSection from "./sections/TestimonialsSection/TestimonialsSection.components";
 import DisplaySettingsSection from "./sections/DisplaySettingsSection/DisplaySettingsSection.component";
@@ -20,7 +20,7 @@ function App() {
     home: useRef<HTMLElement>(null),
     about: useRef<HTMLElement>(null),
     fun: useRef<HTMLElement>(null),
-    projects: useRef<HTMLElement>(null),
+    works: useRef<HTMLElement>(null),
     experience: useRef<HTMLElement>(null),
     testimonials: useRef<HTMLElement>(null),
   };
@@ -32,7 +32,7 @@ function App() {
         <HeroSection ref={sectionRefs.home} />
         <AboutMeSection ref={sectionRefs.about} />
         <FunAboutMeSection ref={sectionRefs.fun} />
-        <ProjectsSection ref={sectionRefs.projects} />
+        <WorksSection ref={sectionRefs.works} />
         <ExperienceSection ref={sectionRefs.experience} />
         <TestimonialsSection ref={sectionRefs.testimonials} />
       </MainContentContainer>

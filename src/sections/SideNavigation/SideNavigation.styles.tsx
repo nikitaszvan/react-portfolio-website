@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 interface NavLinkProps {
     isActive: boolean;
-    activeIndex: number;
 }
 
 
@@ -30,7 +29,7 @@ export const NavLinkContainer = styled.div`
     margin-block: auto;
 `
   
-export const NavLink = styled(({ isActive, activeIndex, ...props }: NavLinkProps & React.ComponentProps<typeof Link>) => (
+export const NavLink = styled(({ isActive, ...props }: NavLinkProps & React.ComponentProps<typeof Link>) => (
 <Link {...props} />
 ))`
 

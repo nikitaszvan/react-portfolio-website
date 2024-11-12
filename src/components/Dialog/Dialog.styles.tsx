@@ -13,19 +13,33 @@ export const Overlay = styled.div`
   z-index: 999;
 `;
 
-export const DialogContainer = styled.div`
+export const DialogContainer = styled.div<{textbox: boolean}>`
   background: var(--bg);
   border-radius: 8px;
-  padding: 20px;
-  width: 400px;
+  padding: ${({textbox}) => textbox ? '2rem' : '0'};
+  width: ${({textbox}) => textbox ? '25rem' : '65%'};
+  max-height: 80%;
   position: relative;
-`;
+  overflow: hidden;
 
-export const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
+  > img {
+    width: 100%;
+    height: 100%; 
+    scale: 1.05;
+    object-fit: cover;
+    
+  }
+
+  > svg {
+    fill: var(--black);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
+  }
 `;

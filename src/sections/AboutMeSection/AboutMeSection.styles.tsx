@@ -151,15 +151,18 @@ export const StyledChevronRight = styled(ChevronRight)<{isExpanded: boolean}>`
     transform: ${(props => props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
 `
 
-export const TagsContainer = styled.div`
+export const TagsContainer = styled.div<{isHovered: boolean}>`
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     padding-inline: 1.3rem;
+    overflow-x: visible;
+    width: 100%;
+    box-sizing: border-box;
 
-    &:has(:hover) {
-        padding-right: 0.8rem;
-    }
+    ${({ isHovered }) => isHovered && 'width: 104%'};
+    transition: width 0s linear ${({ isHovered }) => !isHovered && '1s'};
+
 `;
 
 
@@ -224,7 +227,7 @@ export const StackDescription = styled.p`
     font-weight: 300;
     padding-inline: 1.5rem;
 
-    > span {
+    > strong {
         font-weight: 600;
         color: var(--black-muted);
     }
