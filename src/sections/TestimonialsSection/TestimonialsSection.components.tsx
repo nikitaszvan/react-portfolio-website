@@ -1,11 +1,12 @@
 import TestimonialCard, { Testimonial } from "src/components/TestimonialsCard/TestimonialsCard.component";
 import { 
     CardsContainer,
+    CircleIndicatorContainer,
     StyledTestimonialsSection
  } from "./TestimonialsSection.styles";
 
 import { ReactComponent as QuoteIcon } from "src/assets/svgs/QuoteIcon.svg";
-import { forwardRef, useState, useRef, useEffect } from "react";
+import { forwardRef, useState, useRef, useEffect, TouchEvent } from "react";
 import traciImage from "src/assets/images/traci-image.jpeg";
 import lukeImage from "src/assets/images/luke-image.jpeg";
 import michelleImage from "src/assets/images/michelle-image.webp";
@@ -58,28 +59,77 @@ const testimonials: Testimonial[] = [
     testimonial: `I highly recommend Nikita. Her strong technical skills enable her to work fluently across multiple programming languages and frameworks, with an advanced understanding of full-stack architecture and efficient data flow between backend and frontend...`,
     image: samanImage,
   }
-]
+];
 
 const TestimonialsSection = forwardRef((props, ref) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [activeCard, setActiveCard] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 1144);
+
+  const extendedTestimonials = isMobileView ? testimonials : [...testimonials, ...testimonials];
 
   useEffect(() => {
-    const carousel = carouselRef.current
-    if (!carousel) return
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 1144);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isMobileView) return;
+
+    const carousel = carouselRef.current;
+    if (!carousel) return;
 
     const moveCarousel = () => {
-      if (isHovered) return
-      carousel.scrollLeft += 1
-      if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth)) {
-        carousel.scrollLeft = 0
+      if (isHovered || isDragging) return;
+      carousel.scrollLeft += 1;
+      if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+        carousel.scrollLeft = 0;
       }
-    }
+    };
 
-    const intervalId = setInterval(moveCarousel, 20)
+    const intervalId = setInterval(moveCarousel, 20);
 
-    return () => clearInterval(intervalId)
-  }, [isHovered])
+    return () => clearInterval(intervalId);
+  }, [isHovered, isDragging, isMobileView]);
+
+  const updateActiveCard = () => {
+    if (!carouselRef.current) return
+    const index = Math.round(carouselRef.current.scrollLeft / 476) % testimonials.length;
+    setActiveCard(index)
+  }
+
+  const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
+    if (!carouselRef.current) return
+    setIsDragging(true)
+    setStartX(e.touches[0].clientX - carouselRef.current.offsetLeft)
+    setScrollLeft(carouselRef.current.scrollLeft)
+  }
+
+  const handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
+    if (!isDragging || !carouselRef.current) return
+    e.preventDefault()
+    const x = e.touches[0].clientX - carouselRef.current.offsetLeft
+    const walk = (x - startX) * 2
+    carouselRef.current.scrollLeft = scrollLeft - walk
+    updateActiveCard()
+  }
+
+  const handleTouchEnd = () => {
+    setIsDragging(false)
+  }
+
+  const handleScroll = () => {
+    updateActiveCard()
+  }
+
   return (
     <StyledTestimonialsSection 
       id="testimonials" 
@@ -89,13 +139,40 @@ const TestimonialsSection = forwardRef((props, ref) => {
         <CardsContainer 
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onScroll={handleScroll}
+          role="region"
+          aria-label="Moving carousel"
+          tabIndex={0}
           ref={carouselRef}
           itemsCount = {testimonials.length}
         >
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
+          {extendedTestimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial}/>
           ))}
         </CardsContainer>
+        {!isMobileView && <CircleIndicatorContainer activeCircle={activeCard}>
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                if (carouselRef.current) {
+                  if (index !== 0) {
+                    carouselRef.current.scrollLeft = ((index * 476) - (carouselRef.current.offsetWidth / 5));
+                    console.log(carouselRef);
+                  }
+                  else {
+                    carouselRef.current.scrollLeft = 0;
+                  }
+                  setActiveCard(index)
+                }
+              }}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </CircleIndicatorContainer>}
     </StyledTestimonialsSection>
   )
 });

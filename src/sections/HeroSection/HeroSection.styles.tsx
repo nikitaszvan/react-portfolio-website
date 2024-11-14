@@ -15,6 +15,7 @@ export const HeroImage = styled.img`
     height: 10rem;
     border-radius: 50%;
     border: 0.32rem solid var(--accent-color);
+    background-color: var(--image-bg);
 
     @media (max-width: 767px) {
         width: 8rem;

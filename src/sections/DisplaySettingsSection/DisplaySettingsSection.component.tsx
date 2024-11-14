@@ -125,10 +125,17 @@ useEffect(() => {
         )}
       </ThemeButtonContainer>
       <SocialsContainer>
-        {[{icon: <GitHubFilled/>, link:"https://github.com"}, {icon: <LinkedInFilled/>, link:"https://linkedin.com"}, 
-        {icon: <EnvelopeFilled/>, link:"mailto:nikitaszvan@gmail.com"}]
+        {[{icon: <GitHubFilled/>, link:"https://github.com/nikitaszvan"}, {icon: <LinkedInFilled/>, link:"https://www.linkedin.com/in/nikita-van-162b9417b"}, 
+        {icon: <EnvelopeFilled/>, link:"https://mail.google.com/mail/?extsrc=mailto&url=mailto%3Anikitaszvan%40gmail.com"}]
         .map(({icon, link}, index) => 
-            <SocialLink key={index} to={link}>{icon}</SocialLink>
+            <SocialLink 
+              key={index} 
+              to={link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {icon}
+            </SocialLink>
         )}
       </SocialsContainer>
     </DisplaySettingsContainer>

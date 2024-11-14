@@ -11,7 +11,7 @@ export const MobileMenuContainer = styled.div`
     position: relative;
     z-index: 100;
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1145px) {
         display: none;
     }
 `;

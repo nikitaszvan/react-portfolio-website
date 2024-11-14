@@ -9,7 +9,7 @@ export const StyledExperienceSection = styled.section`
     gap: 2rem;
     padding-top: 1rem;
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1144px) {
         gap: 1rem;
     }
 
@@ -55,7 +55,7 @@ export const JobHistoryItem = styled.div`
     padding-left: 0.75rem;
     padding-bottom: 0.75rem;
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1144px) {
         padding: 0;
     }
 `
@@ -72,7 +72,7 @@ export const VerticalLine = styled.div`
     display: flex;
     justify-content: center;
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1144px) {
         display: none;
     }
 `
@@ -101,8 +101,6 @@ export const Circle = styled.div<{ translateDown: boolean }>`
 
 export const JobHistoryCard = styled.div`
     display: flex;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
     padding: 1.5rem;
     gap: 1rem;
     border-radius: calc(0.5rem + 4px);
@@ -110,18 +108,28 @@ export const JobHistoryCard = styled.div`
     margin-left: 1rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1144px) {
         margin: 0;
     }
+
 
     > img {
         height: 6rem;
         width: 6rem;
+
+        @media (max-width: 1144px) {
+            height: 4rem;
+            width: 4rem;
+        }
         aspect-ratio: 1/1;
         object-fit: cover;
         display: block;
         vertical-align: middle;
         border-radius: 0.5rem;
+
+        @media (max-width: 639px) {
+            display: none;
+        }
     }
 `
 
@@ -129,6 +137,20 @@ export const CardHeader = styled.div`
     display: flex;
     align-items: center;
     gap: 1.5rem;
+
+    @media (max-width: 639px) {
+        gap: 1rem;
+    }
+
+    > img {
+        display: none;
+
+        @media (max-width: 639px) {
+            display: inline-flex;
+            width: 4rem;
+            height: auto;
+        }
+    }
 `
 
 export const TextHeaderContainer = styled.div`
@@ -169,7 +191,6 @@ export const TextHeaderContainer = styled.div`
                 font-size: 0.875rem;
             }
         }
-
     }
 `
 
@@ -187,6 +208,34 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
         font-size: 1rem;
         margin: 0;
         flex: 1;
+
+        > a {
+            text-decoration: underline;
+            color: var(--black-muted);
+            font-weight: 450; 
+            align-items: center;
+
+            &:hover > span > svg {
+                bottom: 0.1rem;
+                left: 0.2rem;
+            }
+
+            > span {
+                display: inline-flex; 
+                text-decoration: underline;
+                align-items: center;
+            }
+            
+            > span > svg {
+                height: 1rem; 
+                width: fit-content;
+                position: relative;
+                bottom: 0;
+                left: 0;
+                transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+                transition-property: bottom, left;
+            }
+        }   
     }
 `
 
@@ -205,8 +254,15 @@ export const ContributionsContainer = styled.div`
     }
 
     > p:nth-of-type(2) {
-        color: var(--black-muted-softer);
+        color: var(--accent-color);
         font-size: 0.9rem;
+        font-style: italic;
+        cursor: pointer;
+        margin-top: 0.3rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 `
 
@@ -235,7 +291,7 @@ export const ExpandButton = styled.button`
     color: var(--accent-color);
     font-size: 0.95rem;
     line-height: 1.25rem;
-    font-weight: 500;
+    font-weight: 350;
     gap: 0.4rem;
     align-items: center;
     display: flex;

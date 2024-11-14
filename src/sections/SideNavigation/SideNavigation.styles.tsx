@@ -16,7 +16,7 @@ export const StyledSideNavigation = styled.nav`
     top: 3rem;
     
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1144px) {
         display: none;
     }
 `;

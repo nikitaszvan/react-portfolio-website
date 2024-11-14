@@ -122,9 +122,9 @@ const MobileMenuSection: FC<SideNavigationProps> = ({ sectionRefs }) => {
     setIsOpen((prev) => !prev)
   }
     const socialsInfo = [
-        { link: "https://github.com", icon: <GitHubFilled /> },
-        { link: "mailto:example@example.com", icon: <EnvelopeFilled /> },
-        { link: "https://linkedin.com", icon: <LinkedInFilled /> },
+        { link: "https://github.com/nikitaszvan", icon: <GitHubFilled /> },
+        { link: "https://www.linkedin.com/in/nikita-van-162b9417b", icon: <LinkedInFilled /> },
+        { link: "https://mail.google.com/mail/?extsrc=mailto&url=mailto%3Anikitaszvan%40gmail.com", icon: <EnvelopeFilled /> },
     ];
 
   return (
@@ -171,7 +171,14 @@ const MobileMenuSection: FC<SideNavigationProps> = ({ sectionRefs }) => {
         </DisplayOptionsContainer>
         <SocialsContainer>
             {socialsInfo.map(({icon, link}, index) => 
-                <Link key={index} to={link}>{icon}</Link>
+                <Link 
+                  key={index}
+                  to={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {icon}
+                </Link>
             )}
       </SocialsContainer>
       </SideNavContainer>

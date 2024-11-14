@@ -35,7 +35,7 @@
 
 }
 
-@media (min-width: 1024px) { /* lg */
+@media (min-width: 1145px) { /* lg */
 
 }
 
@@ -56,6 +56,7 @@ button {
     --black: #121212;
     --black-muted: #1F2937;
     --black-muted-softer: #4B5563;
+    --image-bg: #e1e1e1;
     --gray-p: #71717a;
     --gray-blue-nav: #717a7a;
     --accent-color: #2962ff; 
@@ -100,6 +101,7 @@ button {
     --black-muted-softer: #ADB8C9;
     --gray-p: #98989e;
     --gray-blue-nav: #889191;
+    --image-bg: #E3EEFF;
 
     --accent-color: #426ad7;
     --base-color: #1e3048; 
@@ -143,6 +145,7 @@ button {
         --black-muted-softer: #ADB8C9;
         --gray-p: #98989e;
         --gray-blue-nav: #889191;
+        --image-bg: #E3EEFF;
         
         --accent-color: #426ad7;
         --base-color: #1e3048; 

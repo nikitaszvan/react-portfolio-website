@@ -6,7 +6,7 @@ export const StyledWorksSection = styled.section`
     gap: 2rem;
     padding-top: 1rem;
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1144px) {
         gap: 1rem;
     }
 
@@ -65,7 +65,7 @@ export const ImageContainer = styled.div<{imagePosition: string}>`
 
         &:hover {
             scale: 1.1;
-            opacity: 0.65;
+            opacity: 0.8;
         }
     }
 
@@ -83,7 +83,7 @@ export const ImageContainer = styled.div<{imagePosition: string}>`
         }
 
         svg {
-            fill: var(--black-muted);
+            fill: var(--accent-color);
             width: 1.1rem;
             height: 1.1rem; 
             transition: scale 0.3s ease;
@@ -120,7 +120,7 @@ export const CardContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 2rem;
 `
 
 export const TagContainer = styled.div`
@@ -197,12 +197,8 @@ export const ButtonContainer = styled.div`
         gap: 0.5rem;
 
         &:after {
-            content: "Live Demo";
+            content: "Live";
             color: var(--black-muted);
-
-            @media (max-width: 641px) {
-                content: "Demo"
-            }
         } 
     } 
 

@@ -22,7 +22,7 @@ export const DisplaySettingsContainer = styled.div`
     align-items: flex-end;
 
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1144px) {
         display: none;
     }
 `

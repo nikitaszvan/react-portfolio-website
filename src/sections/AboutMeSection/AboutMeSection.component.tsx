@@ -39,14 +39,15 @@ const AboutMeSection = forwardRef((props, ref) => {
         {label: "TypeScript", link: "https://www.typescriptlang.org"},
         {label: "React", link: "https://react.dev"},
         {label: "Next.js", link: "https://nextjs.org"},
-        {label: "Firebase Auth", link: "https://firebase.google.com/docs/auth"},
-        {label: "Tailwind", link: "https://tailwindcss.com"},
+        {label: "Firebase Auth SDK", link: "https://firebase.google.com/docs/auth"},
+        {label: "Tailwind CSS", link: "https://tailwindcss.com"},
         {label: "Material-UI", link: "https://mui.com/material-ui"},
         {label: "shadcn/ui", link: "https://ui.shadcn.com"},
         {label: "styled-components", link: "https://styled-components.com"}],
       description: 
         <>
-            I use <strong>JavaScript</strong> and <strong>TypeScript</strong> to develop reliable, readable application logic with strong typing. With <strong>React</strong> and <strong>Next.js</strong>, I build scalable applications that focus on performance and user experience, applying either client-side or server-side rendering, as well as static site generation, to enhance SEO and load times. I integrate <strong>Axios</strong> for efficient and reliable HTTP requests, ensuring smooth communication with APIs and server endpoints. Additionally, I use <strong>styled-components</strong> for modular, maintainable styling directly within components. I occasionally leverage <strong>Tailwind CSS</strong> and <strong>Bootstrap</strong> for rapid prototyping and mobile-friendly layouts, alongside <strong>Material-UI</strong> and <strong>shadcn/ui</strong> to provide accessible, visually consistent designs.
+            <p>I create fast, scalable web apps with <strong>JavaScript</strong> and <strong>TypeScript</strong>, using <strong>React</strong> and <strong>Next.js</strong> to deliver smooth, responsive experiences. I build for performance, choosing the best rendering approach—client-side, server-side, or static— I consider what is best for SEO and keep load times quick. I use <strong>Axios</strong> to simplify the process of sending requests, handling responses, and managing errors, providing a clean and consistent approach to interacting with RESTful APIs. I use the <strong>Firebase Auth SDK</strong> to implement secure authentication, particularly for smaller user bases, providing a reliable and streamlined authentication process without the need for extensive backend infrastructure.</p>
+            <p>When it comes to styling, I mostly implement <strong>styled-components</strong> to keep my code modular and maintainable, but <strong>Tailwind CSS</strong> and <strong>Bootstrap</strong> are my go-tos for quick prototypes. I focus on accessibility and a consistent look, using <strong>Material-UI</strong> and <strong>shadcn/ui</strong> to ensure a polished, inclusive design.</p>
         </>
     },
     {
@@ -58,7 +59,7 @@ const AboutMeSection = forwardRef((props, ref) => {
       ],
       description: 
         <>
-            I leverage <strong>Node.js</strong> as the backend technology to build scalable server-side applications, while <strong>Express</strong> is the framework I use to expose routes and handle HTTP requests
+            <p>I use <strong>Node.js</strong> on the backend to connect with the frontend, taking advantage of its async, event-driven setup to handle multiple requests efficiently. For building APIs and handling server routes, I rely on <strong>Express</strong>, which makes it easy to define routes, manage requests, and organize middleware.</p>
         </>
     },
     {
@@ -67,11 +68,11 @@ const AboutMeSection = forwardRef((props, ref) => {
         technologies: [
             {label: "Redux", link: "https://redux.js.org"},
             {label: "Context API", link: "https://react.dev/reference/react/useContext"},
-            {label: "react-hook-form", link: "https://react-hook-form.com"},
+            {label: "React Hook Form", link: "https://React Hook Form.com"},
         ],
         description:
             <>
-                I utilize <strong>Redux</strong> for state management, ensuring consistent state changes and smooth data flow in complex applications. On the other hand, <strong>Context API</strong> offers a lightweight solution for managing global state without the need for additional libraries, enhancing performance and reducing boilerplate code. Additionally, I employ <strong>React Hook Form</strong> to streamline form handling, ensuring smooth user interactions and validation with minimal effort.
+                <p>I use <strong>Redux</strong> for managing state in complex applications, ensuring consistent state updates and smooth data flow. For simpler cases, I turn to the <strong>Context API</strong>, which is a lightweight way to handle global state without adding extra libraries, helping to boost performance and reduce unnecessary code. I also rely on <strong>React Hook Form</strong> to simplify form handling, efficiently managing edge cases, saving form data values, and ensuring smooth validation and user interactions.</p>
             </>
     },
     {
@@ -79,12 +80,11 @@ const AboutMeSection = forwardRef((props, ref) => {
       icon: <CylindricalStack />,
       technologies: [
         {label: "PostgreSQL", link: "https://www.postgresql.org"},
-        {label: "Firebase Realtime Database", link: "https://firebase.google.com/docs/database"},
-        {label: "Firestore Cloud Database", link: "https://cloud.google.com/firestore/docs"},
+        {label: "Firestore Database", link: "https://cloud.google.com/firestore/docs"},
       ],
       description:
         <>
-            I use <strong>PostgreSQL</strong> for designing and optimizing relational database schemas, for reliable data storage, and efficient querying. With <strong>Firebase Realtime Database</strong>, I create scalable, real-time applications that sync data across all users, providing seamless experiences even in low-latency environments.
+            <p>I use <strong>PostgreSQL</strong> for designing and optimizing relational database schemas, for reliable data storage, and efficient querying. With <strong>Firestore Database</strong>, I create scalable applications that sync data across all users, even in low-latency environments.</p>
         </>
     }
   ]

@@ -11,6 +11,7 @@ import ExperienceSection from "./sections/ExperienceSection/ExperienceSection.co
 import TestimonialsSection from "./sections/TestimonialsSection/TestimonialsSection.components";
 import DisplaySettingsSection from "./sections/DisplaySettingsSection/DisplaySettingsSection.component";
 import MobileMenuSection from "./sections/MobileMenuSection/MobileMenuSection.component";
+import Footer from "./sections/Footer/Footer.component";
 import { useRef } from "react";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <WorksSection ref={sectionRefs.works} />
         <ExperienceSection ref={sectionRefs.experience} />
         <TestimonialsSection ref={sectionRefs.testimonials} />
+        <Footer />
       </MainContentContainer>
       <DisplaySettingsSection />
       <MobileMenuSection sectionRefs={sectionRefs} />

@@ -8,7 +8,7 @@ export const StyledAboutMeSection = styled.div`
     gap: 1.7rem;
     padding-top: 1rem;
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1144px) {
         gap: 1rem;
     }
 
@@ -160,7 +160,7 @@ export const TagsContainer = styled.div<{isHovered: boolean}>`
     width: 100%;
     box-sizing: border-box;
 
-    ${({ isHovered }) => isHovered && 'width: 104%'};
+    ${({ isHovered }) => isHovered && 'width: 102%'};
     transition: width 0s linear ${({ isHovered }) => !isHovered && '1s'};
 
 `;
@@ -217,18 +217,23 @@ export const StyledLink = styled(Link)`
     }
 `
 
-export const StackDescription = styled.p`
-    font-size: 1rem;
-    color: var(--black);
-    display: inline !important;
-    margin: 0;
-    white-space: pre-wrap;
-    line-height: 1.5rem;
-    font-weight: 300;
-    padding-inline: 1.5rem;
+export const StackDescription = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
 
-    > strong {
-        font-weight: 600;
-        color: var(--black-muted);
+    > p {
+        font-size: 1rem;
+        color: var(--black);
+        margin: 0;
+        white-space: pre-wrap;
+        line-height: 1.5rem;
+        font-weight: 300;
+        padding-inline: 1.5rem;
+
+        > strong {
+            font-weight: 600;
+            color: var(--black-muted);
+        }
     }
 `

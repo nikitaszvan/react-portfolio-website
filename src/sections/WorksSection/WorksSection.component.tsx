@@ -37,19 +37,19 @@ const projects: Project[] = [
   {
     id: 1,
     title: "Innolab: Hackathon Suite",
-    description: "Hackathon suite extension MVP for tech enthusiasts, enabling event management from registration to feedback, fostering collaboration, skill-building, and networking.",
-    longDescription: "Collaborated with a multidisciplinary team to design and develop a hackathon suite as an extension of an existing platform, tailored for a focused community of tech enthusiasts. This suite enables end-to-end event management, including participant registration, project submissions, showcasing, and feedback—fostering skill-building, collaboration, and networking within the tech community.",
+    description: "MVP for a hackathon suite, designed for tech enthusiasts to streamline event management—from registration to feedback—promoting collaboration, skill-building, and networking.",
+    longDescription: "Worked closely with a multidisciplinary team to design and develop a hackathon suite as an extension of an existing platform, tailored for tech enthusiasts. This suite supports end-to-end event management, from participant registration and project submissions to showcasing and feedback, fostering skill-building, collaboration, and networking within the tech community.",
     imageUrl: InnolabShowcase,
     imagePosition: "center",
-    technologies: ["React", "Typescript", "Firestore Database", "Firebase Hosting", "Firebase Auth", "Context API", "Tailwind", "shadcn/ui", "Miro", "Figma", "Zod", "react-hook-form"],
-    liveUrl: "https://example.com/ecommerce",
+    technologies: ["React", "Typescript", "Firestore Database", "Firebase Hosting", "Firebase Auth SDK", "Firebase Storage", "Context API", "Tailwind CSS", "shadcn/ui", "Figma", "Zod", "React Hook Form"],
+    liveUrl: "https://launchacademybackend-innolab.web.app",
     githubUrl: "https://github.com/makeitMVPadmin/LAP5_InnoLab1"
   },
   {
     id: 2,
-    title: "Canadian Citizenship Test 2024",
-    description: "The Canadian Citizenship Test 2024 web app is an adaptation of the popular mobile app, designed to provide a seamless and consistent test preparation experience for users across devices.",
-    longDescription: "Modeled after the highly ranked mobile version, this web application offers users interactive learning tools and practice tests, helping them prepare for their Canadian citizenship test with ease. With a user-friendly interface developed using HTML, CSS, and JavaScript, the app brings essential study resources online, maintaining the design and functionality that has landed the mobile app in the top 10 in the Education & Learning category for Canada.",
+    title: "Canadian Citizenship Test 2024: Web Edition",
+    description: "The Canadian Citizenship Test 2024 is a web-based extension of the widely used mobile app of the same name, delivering a unified test preparation experience across multiple devices. It features the same standardized content, enabling prospective citizens to access and study the material.",
+    longDescription: "Built on the success of the highly rated mobile version, this web application provides interactive learning tools and practice tests to help users prepare for the Canadian citizenship test. Featuring a user-friendly interface, the app brings essential study resources to the web while maintaining the design and functionality that contributed to the mobile app's ranking in the top 10 of Canada's Education & Learning category.",
     imageUrl: CitizenshipWeb,
     imagePosition: "top",
     technologies: ["Javascript", "HTML", "CSS", "Firestore Database"],
@@ -58,14 +58,14 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Online Learning Course Portal",
-    description: "A user-friendly portal MVP that makes it easy to access, manage, and explore a wide range of online courses for an enjoyable learning experience.",
-    longDescription: "This task management tool is designed to help teams collaborate effectively. Built with Vue.js and powered by Firebase, it offers real-time updates across all connected clients. The application features task creation, assignment, and tracking, as well as team management capabilities. Vuex is used for state management, ensuring a smooth and responsive user experience. The real-time database allows for instant synchronization of tasks and updates across team members.",
+    title: "eCourseFlow: Online Learning Hub",
+    description: "An educational portal designed for academic institutions, providing seamless access, management, and exploration of courses. With a range of learning tools and testing modes, it enhances the online learning experience for students across institutions, all virtually connected.",
+    longDescription: "An innovative educational portal designed for academic institutions, offering students and faculty an intuitive platform for accessing, managing, and exploring a wide range of courses. The portal provides an array of learning tools, including interactive content and progress tracking, to help students engage with their coursework effectively. Additionally, it includes testing modes for practice exams and assessments, enabling students to test their knowledge and track their learning proficiency. By connecting all users through the internet, this platform fosters collaboration and streamlined communication between students, instructors, and academic administrators, enhancing the overall learning experience and making education more accessible, flexible, and interactive.",
     imageUrl: SchoolPortal,
     imagePosition: "center",
     technologies: ["React", "Typescript", "Firestore Database", "Firebase Hosting", "Firebase Auth", "Redux", "styled-components", "Figma"],
-    liveUrl: "https://example.com/task-manager",
-    githubUrl: "https://github.com/yourusername/task-manager"
+    liveUrl: "https://real-estate-project-356e9.web.app",
+    githubUrl: "https://github.com/nikitaszvan/online-learning-portal"
   }
 ]
 
@@ -89,7 +89,7 @@ const WorksSection = forwardRef((props, ref) => {
     <StyledWorksSection id="works" ref={ref}>
       <span><LightBulbOutlined/><h2>My Work</h2></span>
       {projects.map((project) => (
-        <ProjectCard key={project.id}>
+        <ProjectCard key={project.id} id={`project-`+ project.id}>
             <ImageContainer imagePosition={project.imagePosition}>
               <img
                 src={project.imageUrl}

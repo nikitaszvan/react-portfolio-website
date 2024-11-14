@@ -30,7 +30,39 @@ export const StyledTestimonialsSection = styled.div`
 export const CardsContainer = styled.div<{itemsCount: number}>`
     display: flex;
     overflow-x: hidden;
+
+    @media (max-width: 1144px) {
+        overflow-x: scroll;
+    }
     transition: scroll-left 0.5s linear;
     gap: 2rem;
     padding-block: 2rem;
+
+    > div:nth-of-type(1) {
+        margin-left: 1rem;
+    }
+
+    > div:last-of-type {
+        margin-right: 1rem; 
+    }
+`
+
+export const CircleIndicatorContainer = styled.div<{ activeCircle: number }>`
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+
+
+    > button {
+        width: 0.75rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background-color: var(--base-color);
+        transition: background-color 0.2s;
+        border: none;
+    }
+
+    > button:nth-of-type(${({activeCircle}) => (activeCircle + 1)}) {
+        background-color: var(--accent-color); 
+    }
 `

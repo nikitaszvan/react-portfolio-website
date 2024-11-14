@@ -7,7 +7,7 @@ export const StyledFunAboutMe = styled.section`
     flex-direction: column;
     gap: 2rem;
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1144px) {
         gap: 1rem;
     }
 
@@ -45,7 +45,7 @@ export const StyledHeader = styled.div`
     margin-bottom: 2rem;
     gap: 0.4rem;
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1144px) {
         margin-bottom: 1rem;
     }
 
@@ -121,7 +121,7 @@ export const HobbyColumn = styled.div`
 
     &:nth-of-type(1) {
         > div:nth-of-type(2) {
-            @media (max-width: 1023px) {
+            @media (max-width: 1144px) {
                 transform: translateX(-16.5%) translateY(0);
             }
         }
@@ -145,7 +145,7 @@ export const HobbyColumn = styled.div`
 
     &:last-of-type {
         > div:nth-of-type(2) {
-            @media (max-width: 1023px) {
+            @media (max-width: 1144px) {
                 transform: translateX(-84%) translateY(0);
             }
         }

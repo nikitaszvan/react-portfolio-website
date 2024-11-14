@@ -6,11 +6,15 @@ export const StyledTestimonialCard = styled.div`
     display: flex;
     flex-shrink: 0;
     flex-direction: column;
-    width: 50%;
+    width: 23.5rem;
     position: relative;
     padding: 2rem;
-    border: var(--border-width) solid var(--border-color);
+    border: 2px solid var(--border-color);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 639px) {
+        width: 60vw;
+    }
 `
 
 export const MainCard = styled.div`
@@ -28,6 +32,10 @@ export const MainCard = styled.div`
             color: var(--black-muted-softer);
             font-style: italic;
             line-height: 1.6rem;
+
+            @media (max-width: 639px) {
+                line-height: 1.4rem;
+            }
             margin: 0;
         }
     }
