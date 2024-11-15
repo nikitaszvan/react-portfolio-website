@@ -21,8 +21,7 @@ export const DialogContainer = styled.div<{textbox: boolean}>`
   ${({textbox}) => textbox ? 
   `width: 25rem` 
   : 
-  `width: 65%; min-width: 30rem;`};
-  height: auto;
+  `height: 90%;`};
   @media (min-width: 640px) {
     position: relative;
   }

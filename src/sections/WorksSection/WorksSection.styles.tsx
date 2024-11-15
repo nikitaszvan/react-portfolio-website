@@ -61,7 +61,7 @@ export const ImageContainer = styled.div<{imagePosition: string}>`
         height: 100%;
         opacity: 1;
         transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        transition-property: opacity, scale;
+        transition-property: opacity, scale, filter;
 
         &:hover {
             scale: 1.1;

@@ -1,5 +1,7 @@
 import {
+    GreenDot,
     HeroImage,
+    HeroImageWrapper,
     HeroTextContainer,
     StyledHeroSection,
     } from "./HeroSection.styles";
@@ -10,10 +12,17 @@ import { forwardRef } from "react";
 const HeroSection = forwardRef((props, ref) => {
   return (
     <StyledHeroSection id="home" ref={ref}>
-        <HeroImage
-            src={HeroImageSrc}
-            alt="Profile picture"
-        />
+        <HeroImageWrapper
+            to='https://www.linkedin.com/in/nikita-van-162b9417b'
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <HeroImage
+                src={HeroImageSrc}
+                alt="Profile picture"
+            />
+            <GreenDot />
+        </HeroImageWrapper>
         <HeroTextContainer>
             <h1>
                 I'm Nikita – <span>a full-stack developer.</span>

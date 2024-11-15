@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AppContainer = styled.div`
-    font-family: 'Geist';
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     display: flex;
     position: relative;
     padding: 3rem;
