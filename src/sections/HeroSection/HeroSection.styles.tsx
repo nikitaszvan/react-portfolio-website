@@ -53,12 +53,12 @@ export const HeroImage = styled.img`
     }
 `
 const pulse = keyframes`
-    0%{
+    0% {
         -webkit-transform: scale(0.01);
         transform: scale(0.01);
     }
     
-    100%{
+    100% {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
@@ -75,6 +75,11 @@ export const GreenDot = styled.div`
     background-color: #01754f;
     animation: ${pulse} 0.75s cubic-bezier(0.4, 0, 0.2, 1);
 
+    @media (max-width: 767px) {
+        width: 1.1rem;
+        height: 1.1rem;
+        border: 0.18rem solid var(--bg);
+    }
 `
 const underlineAnimation = keyframes`
     0% {
