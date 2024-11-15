@@ -109,13 +109,18 @@ export const HeroTextContainer = styled.div`
         position: relative;
         white-space: pre-wrap;
 
-        @media (max-width: 767px) {
-            font-size: 2.5rem;
+        @media (max-width: 699px) {
+            font-size: 2.6rem;
         }
+
 
         > span {
             @media (max-width: 838px) {
-                display: inline-block;
+                display: inline-flex;
+            }
+
+            @media (max-width: 699px) {
+                font-size: 3rem;
             }
         }
 
@@ -123,7 +128,7 @@ export const HeroTextContainer = styled.div`
             position: relative;
 
             &::before {
-                @media (min-width: 467px) {
+                @media (min-width: 566px) {
                     content: "a full-stack developer.";
                 }
                 
@@ -151,13 +156,13 @@ export const HeroTextContainer = styled.div`
             position: relative;
 
             &::before {
-                @media (max-width: 466px) {
+                @media (max-width: 565px) {
                     content: "developer.";
                 }
             }
 
             &:after {
-                @media (max-width: 466px) {
+                @media (max-width: 566px) {
                     content: '';
                     position: absolute;
                     bottom: 0;
