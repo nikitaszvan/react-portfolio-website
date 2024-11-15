@@ -68,11 +68,11 @@ export const GreenDot = styled.div`
     width: 1.4rem;
     height: 1.4rem;
     border-radius: 50%;
-    border: 0.2rem solid var(--bg);
+    border: 0.23rem solid var(--bg);
     position: absolute;
     right: 6%;
     bottom: 6%;
-    background-color: green;
+    background-color: #01754f;
     animation: ${pulse} 0.75s cubic-bezier(0.4, 0, 0.2, 1);
 
 `
