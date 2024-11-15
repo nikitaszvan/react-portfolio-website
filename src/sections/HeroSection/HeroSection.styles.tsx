@@ -107,14 +107,28 @@ export const HeroTextContainer = styled.div`
         color: var(--black-muted);
         padding-bottom: 0;
         position: relative;
+        white-space: pre-wrap;
 
         @media (max-width: 767px) {
             font-size: 2.5rem;
         }
 
         > span {
-            position: relative; 
-            display: inline-block;
+            @media (max-width: 838px) {
+                display: inline-block;
+            }
+        }
+
+        > span:nth-of-type(1) {
+            position: relative;
+
+            &::before {
+                @media (min-width: 467px) {
+                    content: "a full-stack developer.";
+                }
+                
+                content: "a full-stack";
+            }
 
             &::after {
                 content: '';
@@ -130,6 +144,31 @@ export const HeroTextContainer = styled.div`
                 background-color: var(--accent-color);
                 animation: ${underlineAnimation} 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards 1s;
             }
+            
+        }
+
+        > span:nth-of-type(2) {
+            position: relative;
+
+            &::before {
+                @media (max-width: 466px) {
+                    content: "developer.";
+                }
+            }
+
+            &:after {
+                @media (max-width: 466px) {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 0.22rem;
+
+                    background-color: var(--accent-color);
+                    animation: ${underlineAnimation} 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.6s;
+                }
+            }
+
         }
     }
 
