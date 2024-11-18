@@ -68,7 +68,7 @@ const AboutMeSection = forwardRef((props, ref) => {
         technologies: [
             {label: "Redux", link: "https://redux.js.org"},
             {label: "Context API", link: "https://react.dev/reference/react/useContext"},
-            {label: "React Hook Form", link: "https://React Hook Form.com"},
+            {label: "React Hook Form", link: "https://react-hook-form.com"},
         ],
         description:
             <>

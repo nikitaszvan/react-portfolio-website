@@ -137,7 +137,7 @@ button {
     --border-color: #574547;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --bg: #121212; 
         --black: #FFFFFF; 
@@ -153,4 +153,4 @@ button {
         --border-color: #3c4953;
         --accent-tag: #bfdbfe;
     }
-}
+} */
