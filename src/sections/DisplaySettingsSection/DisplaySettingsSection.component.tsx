@@ -32,33 +32,31 @@ const themes: Theme[] = [
 ];
 
 const DisplaySettingsSection = () => {
-  const [theme, setTheme] = useState<string>("blue");
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("data-color-theme");
+
+    if (savedTheme) {
+      document.documentElement.setAttribute("data-color-theme", savedTheme);
+      return savedTheme;
+    }
+
+    return "blue";
+  });
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isDarkMode, setIsDarkMode] = useState(() => {
+
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
+
     const savedMode = localStorage.getItem("data-theme");
     if (savedMode) {
       document.documentElement.setAttribute("data-theme", savedMode);
       return savedMode === "dark";
     }
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
-  return prefersDark;
-});
 
-useEffect(() => {
-    const savedTheme = localStorage.getItem("data-color-theme");
-    const savedMode = localStorage.getItem("data-theme");
-    
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute("data-color-theme", savedTheme);
-    }
-    if (savedMode) {
-      setIsDarkMode(savedMode === "dark");
-      document.documentElement.setAttribute("data-theme", savedMode);
-    }
-  }, []);
+    return prefersDark;
+  });
 
   const toggleDarkMode = () => {
     setIsDarkMode(prevMode => {
@@ -90,7 +88,6 @@ useEffect(() => {
 
   return (
     <DisplaySettingsContainer>
-      
       <ThemeButtonContainer ref={dropdownRef}>
       <button
         onClick={toggleDarkMode}

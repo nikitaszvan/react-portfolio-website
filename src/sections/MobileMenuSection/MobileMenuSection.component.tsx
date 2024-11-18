@@ -30,25 +30,28 @@ type SideNavigationProps = {
 
 const MobileMenuSection: FC<SideNavigationProps> = ({ sectionRefs }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isDark, setIsDark] = useState(() => {
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("data-color-theme");
+
+    if (savedTheme) {
+      document.documentElement.setAttribute("data-color-theme", savedTheme);
+      return savedTheme;
+    }
+
+    return "blue";
+  });
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
+
     const savedMode = localStorage.getItem("data-theme");
     if (savedMode) {
       document.documentElement.setAttribute("data-theme", savedMode);
       return savedMode === "dark";
     }
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
-  return prefersDark;
-});
 
-  const [theme, setTheme] = useState(() => {
-    const savedColor = localStorage.getItem("data-color-theme");
-    if (savedColor) {
-        document.documentElement.setAttribute("data-color-theme", savedColor);
-        return savedColor;
-    } 
-
-    return "blue"
+    return prefersDark;
   });
   const [activeSection, setActiveSection] = useState('');
 
@@ -102,14 +105,13 @@ const MobileMenuSection: FC<SideNavigationProps> = ({ sectionRefs }) => {
   const sections = ["Home", "About", "Fun", "Works", "Experience", "Testimonials"];
 
   const toggleDark = () => {
-    setIsDark(prevMode => {
+    setIsDarkMode(prevMode => {
         const newMode = !prevMode;
         document.documentElement.setAttribute("data-theme", newMode ? "dark" : "light");
         localStorage.setItem("data-theme", newMode ? "dark" : "light");
         return newMode;
       });
     document.documentElement.classList.toggle("dark");
-    console.log(isDark);
   }
 
   const changeTheme = (newTheme: string) => {
@@ -153,11 +155,11 @@ const MobileMenuSection: FC<SideNavigationProps> = ({ sectionRefs }) => {
             <DarkModeContainer>
                 <label htmlFor="button">Dark Mode</label>
                 <ToggleButton
-                    aria-checked={isDark}
-                    data-state={isDark ? 'checked' : 'unchecked'}
+                    aria-checked={isDarkMode}
+                    data-state={isDarkMode ? 'checked' : 'unchecked'}
                     onClick={toggleDark}
                 >
-                    <ToggleThumb data-state={isDark ? 'checked' : 'unchecked'} />
+                    <ToggleThumb data-state={isDarkMode ? 'checked' : 'unchecked'} />
                 </ToggleButton>
             </DarkModeContainer>
             <label htmlFor="theme-color">

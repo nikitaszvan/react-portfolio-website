@@ -10,7 +10,6 @@ const ProgressiveImage = ({ lowSrc, highSrc, alt }) => {
     img.src = highSrc;
 
     img.onload = () => {
-        console.log(highSrc);
       setSrc(highSrc);
       setIsLoading(false);
     };
