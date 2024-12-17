@@ -215,27 +215,21 @@ export const CardContent = styled.div<{expandedJob: boolean}>`
             font-weight: 450; 
             align-items: center;
 
-            &:hover > span > svg {
-                bottom: 0.1rem;
-                left: 0.2rem;
+            &:hover ~ svg {
+                top: 0;
+                left: 0.3rem;
             }
-
-            > span {
-                display: inline-flex; 
-                text-decoration: underline;
-                align-items: center;
-            }
-            
-            > span > svg {
-                height: 1rem; 
-                width: fit-content;
-                position: relative;
-                bottom: 0;
-                left: 0;
-                transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-                transition-property: bottom, left;
-            }
-        }   
+        }
+        
+        > svg {
+            height: 1rem; 
+            width: fit-content;
+            position: relative;
+            top: 2.5px;
+            left: 0.1rem;
+            transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-property: top, left;
+        }
     }
 `
 
