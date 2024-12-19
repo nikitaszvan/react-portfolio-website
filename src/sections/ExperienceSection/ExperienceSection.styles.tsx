@@ -77,7 +77,7 @@ export const VerticalLine = styled.div`
     }
 `
 
-export const Circle = styled.div<{ translateDown: boolean }>`
+export const Circle = styled.div<{ $translateDown: boolean }>`
     position: absolute;
     top: 0%;
     width: 0.75rem;
@@ -93,10 +93,10 @@ export const Circle = styled.div<{ translateDown: boolean }>`
         height: 0.5rem;
     }
 
-    ${(props => props.translateDown && `
+    ${({$translateDown}) => $translateDown && `
         transform: translateY(-100%);
         top: 100%;    
-    `)}
+    `}
 `
 
 export const JobHistoryCard = styled.div`
@@ -194,7 +194,7 @@ export const TextHeaderContainer = styled.div`
     }
 `
 
-export const CardContent = styled.div<{expandedJob: boolean}>`
+export const CardContent = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
@@ -260,7 +260,7 @@ export const ContributionsContainer = styled.div`
     }
 `
 
-export const ContentDescription = styled.div<{expandedJob: boolean}>`
+export const ContentDescription = styled.div`
     display: flex;
 
     > svg {
@@ -300,7 +300,7 @@ export const ExpandButton = styled.button`
 
 `
 
-export const StyledChevronDown = styled(ChevronDown)<{ rotateArrow: boolean }>`
+export const StyledChevronDown = styled(ChevronDown)<{ $rotateArrow: boolean }>`
     width: 1.2rem;
     height: 1.2rem;
 
@@ -309,5 +309,5 @@ export const StyledChevronDown = styled(ChevronDown)<{ rotateArrow: boolean }>`
         height: 0.7rem;
     }
 
-    transform: ${(props => props.rotateArrow ? 'rotate(-180deg)' : 'rotate(0deg)' )};
+    transform: ${({$rotateArrow}) => $rotateArrow ? 'rotate(-180deg)' : 'rotate(0deg)' };
 `

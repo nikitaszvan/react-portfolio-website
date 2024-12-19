@@ -78,7 +78,7 @@ export const TechStackIcon = styled.div`
     }
 `
 
-export const TechStackHeader = styled.div<{ isExpanded: boolean }>`
+export const TechStackHeader = styled.div<{ $isExpanded: boolean }>`
     overflow: hidden;
     display: flex;
     justify-content: space-between;
@@ -88,8 +88,8 @@ export const TechStackHeader = styled.div<{ isExpanded: boolean }>`
     border-top-left-radius: calc(0.5rem - 2px);
     border-top-right-radius: calc(0.5rem - 2px);
 
-    ${(props => !props.isExpanded && 'border-bottom: 0.5px solid var(--border-color-stays)')};
-    ${(props => props.isExpanded && 'background-color: var(--base-color);')};
+    ${({$isExpanded}) => !$isExpanded && 'border-bottom: 0.5px solid var(--border-color-stays)'};
+    ${({$isExpanded}) => $isExpanded && 'background-color: var(--base-color);'};
 
     &:hover {
         background-color: var(--base-color);
@@ -142,16 +142,16 @@ export const ToggleDetailsButton = styled.button`
     cursor: pointer;
 `
 
-export const StyledChevronRight = styled(ChevronRight)<{isExpanded: boolean}>`
+export const StyledChevronRight = styled(ChevronRight)<{$isExpanded: boolean}>`
     margin-left: 0.25rem;
     height: 0.8rem;
     width: 0.8rem;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     fill: var(--accent-color);
-    transform: ${(props => props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
+    transform: ${({$isExpanded}) => $isExpanded ? 'rotate(90deg)' : 'rotate(0deg)'};
 `
 
-export const TagsContainer = styled.div<{isHovered: boolean}>`
+export const TagsContainer = styled.div<{$isHovered: boolean}>`
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -160,8 +160,8 @@ export const TagsContainer = styled.div<{isHovered: boolean}>`
     width: 100%;
     box-sizing: border-box;
 
-    ${({ isHovered }) => isHovered && 'width: 102%'};
-    transition: width 0s linear ${({ isHovered }) => !isHovered && '1s'};
+    ${({ $isHovered }) => $isHovered && 'width: 102%'};
+    transition: width 0s linear ${({ $isHovered }) => !$isHovered && '1s'};
 
 `;
 

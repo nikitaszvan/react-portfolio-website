@@ -109,10 +109,10 @@ const DisplaySettingsSection = () => {
                     <StyledThemeOption
                         key={t.value}
                         onClick={() => changeTheme(t.value)}
-                        isBolded = {theme === t.value}
+                        $isBolded = {theme === t.value}
                     >   
-                        <BlackCircle isSelected={theme === t.value} /> 
-                        <GradientCircle gradient={t.gradient}/>
+                        <BlackCircle $isSelected={theme === t.value} /> 
+                        <GradientCircle $gradient={t.gradient}/>
                         {t.name}
                     </StyledThemeOption>
                     </>

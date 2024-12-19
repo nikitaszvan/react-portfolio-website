@@ -9,6 +9,7 @@ import {
   } from "react";
 
 import parse from "html-react-parser";
+
 import { 
   CardContent,
   CardHeader,
@@ -30,45 +31,23 @@ import { ReactComponent as BriefcaseOutline } from "src/assets/svgs/BriefcaseOut
 import { ReactComponent as ArrowUpRight } from "../../assets/svgs/ArrowUpRight.svg";
 import useContentful from "../../hooks/useContentful";
 
-const ComponentMap: { [key: string]: ElementType } = {
-  ArrowUpRight: () => <ArrowUpRight />
+interface ProjectRoleProps {
+  description: any;
 }
 
-const ProjectRole = ({descriptionHtml}) => {
+const ProjectRole: React.FC<ProjectRoleProps> = ({ description }) => {
+  if (!description) return null;
 
-  const renderContent = (input: string) => {
-    const regex = /\{\{(.*?)\}\}/g;
-
-    const parts = [];
-    let lastIndex = 0;
-    let match: RegExpExecArray | null;
-
-
-    while ((match = regex.exec(input)) !== null) {
-      const before = input.slice(lastIndex, match.index);
-      parts.push(before);
-
-      const token = match[1].trim();
-
-      const Component = ComponentMap[token];
-      parts.push(Component ? <Component key={parts.length}/> : token);
-
-      lastIndex = regex.lastIndex;
-    }
-
-    parts.push(input.slice(lastIndex));
-
-    return parts;
-  };
-
-  return ( 
+  const regex = /<([^<>]+?)\/>/g;
+  const parts = description.split(regex);
+  
+  return (
     <p>
-      {renderContent(descriptionHtml).map((content, index) => {
-        return isValidElement(content) ? (
-          content
-        ) : (
-          <Fragment key={index}>{parse(content)}</Fragment>
-        );
+      {parts.map((part, index) => {
+        if (part === 'ArrowUpRight') {
+          return <ArrowUpRight key={index}/>;
+        }
+        return <Fragment key={index}>{parse(part)}</Fragment>;
       })}
     </p>
   );
@@ -108,13 +87,13 @@ const ExperienceSection = forwardRef((props, ref) => {
           <JobHistoryItem key={i} ref={el => jobRefs.current[i] = el}>
               <VerticalLine>
                   <Circle 
-                      translateDown={expandedJobs[i]}
+                      $translateDown={expandedJobs[i]}
                       onClick={() => toggleJobDescription(i)}
                   />
               </VerticalLine>
               <JobHistoryCard>
                   <img src={job.logo.file.url} alt={`${job.company} logo`} />
-                  <CardContent expandedJob={expandedJobs[i]}>
+                  <CardContent>
                       <CardHeader>
                         <img src={job.logo.file.url} alt={`${job.company} logo`} />
                           <TextHeaderContainer>
@@ -123,12 +102,12 @@ const ExperienceSection = forwardRef((props, ref) => {
                               <p>{job.period}</p>
                           </TextHeaderContainer>
                       </CardHeader>
-                      <ProjectRole descriptionHtml={job.role} />
+                      <ProjectRole description={job.role} />
                       <ContributionsContainer>
                           <p><strong>Key Contributions:</strong></p>
                           {(job.keyContributions).map((desc, index) =>
                               (index <= 0 || expandedJobs[i]) && (
-                                  <ContentDescription key={index} expandedJob={expandedJobs[i]}>
+                                  <ContentDescription key={index}>
                                       <ChevronRight/>
                                       <p>
                                           {desc}{!expandedJobs[i] && '..'}
@@ -148,7 +127,7 @@ const ExperienceSection = forwardRef((props, ref) => {
                               aria-controls={`job-description-${i}`}
                           >
                               Collapse
-                              <StyledChevronDown rotateArrow/>
+                              <StyledChevronDown $rotateArrow/>
                           
                           </ExpandButton> 
                       }

@@ -72,7 +72,7 @@ const FunAboutMeSection = forwardRef((props, ref) => {
                     <hobby.icon />
                 </IconContainer>
                 <p>{hobby.label}</p>
-                <ImageContainer isVisible={hoveredHobby === hobby.label}>
+                <ImageContainer $isVisible={hoveredHobby === hobby.label}>
                     {hobby.images.map((src, index) => (
                         <div key={index}>
                             <img

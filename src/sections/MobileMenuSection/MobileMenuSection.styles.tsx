@@ -16,7 +16,7 @@ export const MobileMenuContainer = styled.div`
     }
 `;
 
-export const MenuButton = styled.button<{ isOpen: boolean }>`
+export const MenuButton = styled.button`
     position: fixed;
     top: 2rem;
     right: 2rem;
@@ -32,21 +32,21 @@ export const MenuButton = styled.button<{ isOpen: boolean }>`
     }
 `;
 
-export const Overlay = styled.div<{ isOpen: boolean }>`
+export const Overlay = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   top: 0;
   right: 0;
   height: 100%;
   width: 100%;
-  background-color: ${({ isOpen }) => (isOpen ? 'rgba(0, 0, 0, 0.5)' : 'transparent')};
-  pointer-events: ${({ isOpen }) => (isOpen ? 'all' : 'none')};
+  background-color: ${({ $isOpen }) => ($isOpen ? 'rgba(0, 0, 0, 0.5)' : 'transparent')};
+  pointer-events: ${({ $isOpen }) => ($isOpen ? 'all' : 'none')};
   transition: opacity 0.3s ease;
   z-index: 50;
-  visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
-  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+  visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
+  opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
 `;
 
-export const SideNavContainer = styled.div<{ isOpen: boolean }>`
+export const SideNavContainer = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   top: 0;
   right: 0;
@@ -58,7 +58,7 @@ export const SideNavContainer = styled.div<{ isOpen: boolean }>`
   flex-direction: column;
   padding: 2rem;
   box-sizing: border-box;
-  transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(100%)")};
+  transform: ${({ $isOpen }) => ($isOpen ? "translateX(0)" : "translateX(100%)")};
   transition: transform 0.3s ease;
   z-index: 100;
 `;
@@ -69,13 +69,13 @@ export const NavLinkContainer = styled.div`
     gap: 0.5rem;
 `
 
-export const NavLink = styled(Link)<{ isActive: boolean }>`
+export const NavLink = styled(Link)<{ $isActive: boolean }>`
     text-decoration: none;
     color: var(--black);
     font-size: 1.5rem;
     cursor: pointer;
-    font-weight: ${(props) => props.isActive ? '500' : '450'};
-    color: ${(props) => props.isActive ? 'var(--accent-color)' : 'var(--black-muted)'};
+    font-weight: ${({$isActive}) => $isActive ? '500' : '450'};
+    color: ${({$isActive}) => $isActive ? 'var(--accent-color)' : 'var(--black-muted)'};
 
     &:hover {
         color: var(--accent-color);
@@ -159,15 +159,15 @@ export const ColorOptionContainer = styled.div`
     margin-left: 0.2rem;
 `
 
-export const ColorOption = styled(GradientCircle)<{ isSelected: boolean }>`
+export const ColorOption = styled(GradientCircle)<{ $isSelected: boolean }>`
     cursor: pointer;
     width: 2rem;
     height: 2rem;
 
-    ${(props => props.isSelected &&
+    ${({$isSelected}) => $isSelected &&
         `outline: 2px solid var(--black);
         outline-offset: 2px;
-    `)}
+    `}
 `
 
 export const SocialsContainer = styled.div`

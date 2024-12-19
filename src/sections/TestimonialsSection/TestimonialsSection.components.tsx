@@ -62,7 +62,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialsSection = forwardRef((props, ref) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [$isHovered, set$isHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
@@ -88,7 +88,7 @@ const TestimonialsSection = forwardRef((props, ref) => {
     if (!carousel) return;
 
     const moveCarousel = () => {
-      if (isHovered || isDragging) return;
+      if ($isHovered || isDragging) return;
       carousel.scrollLeft += 1;
       if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
         carousel.scrollLeft = 0;
@@ -98,7 +98,7 @@ const TestimonialsSection = forwardRef((props, ref) => {
     const intervalId = setInterval(moveCarousel, 20);
 
     return () => clearInterval(intervalId);
-  }, [isHovered, isDragging, isMobileView]);
+  }, [$isHovered, isDragging, isMobileView]);
 
   const updateActiveCard = () => {
     if (!carouselRef.current) return
@@ -137,8 +137,8 @@ const TestimonialsSection = forwardRef((props, ref) => {
     >
         <span><QuoteIcon/><h2>Testimonials</h2></span>
         <CardsContainer 
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseEnter={() => set$isHovered(true)}
+          onMouseLeave={() => set$isHovered(false)}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -147,7 +147,6 @@ const TestimonialsSection = forwardRef((props, ref) => {
           aria-label="Moving carousel"
           tabIndex={0}
           ref={carouselRef}
-          itemsCount = {testimonials.length}
         >
           {extendedTestimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial}/>

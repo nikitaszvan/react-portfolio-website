@@ -27,7 +27,7 @@ export const StyledTestimonialsSection = styled.div`
     }
 `
 
-export const CardsContainer = styled.div<{itemsCount: number}>`
+export const CardsContainer = styled.div`
     display: flex;
     overflow-x: hidden;
 

@@ -131,22 +131,22 @@ const MobileMenuSection: FC<SideNavigationProps> = ({ sectionRefs }) => {
 
   return (
     <MobileMenuContainer>
-        <MenuButton onClick={toggleMenu} isOpen={isOpen}>
+        <MenuButton onClick={toggleMenu}>
             {isOpen ? <CloseIcon /> : <MenuIcon />}
         </MenuButton>
-      <Overlay isOpen={isOpen}/>
-      <SideNavContainer isOpen={isOpen}>
+      <Overlay $isOpen={isOpen}/>
+      <SideNavContainer $isOpen={isOpen}>
         <NavLinkContainer>
-            {sections.map((link, index) => 
-                <NavLink 
-                key={index} 
-                to={`#${link}`} 
-                isActive={activeSection === link.toLowerCase()}
-                onClick={() => {
-                    scrollToSection(`${link.toLowerCase()}`);
-                    toggleMenu();
-                }}
-                >
+          {sections.map((link, index) => 
+              <NavLink 
+              key={index} 
+              to={`#${link}`} 
+              $isActive={activeSection === link.toLowerCase()}
+              onClick={() => {
+                  scrollToSection(`${link.toLowerCase()}`);
+                  toggleMenu();
+              }}
+              >
                 {link} 
             </NavLink>
             )}
@@ -166,8 +166,8 @@ const MobileMenuSection: FC<SideNavigationProps> = ({ sectionRefs }) => {
                 Theme Color
             </label>
             <ColorOptionContainer>
-                {themes.map((t) => (
-                    <ColorOption gradient={t.gradient} onClick={() => changeTheme(t.value)} isSelected={theme === t.value}/>
+                {themes.map((t, index) => (
+                    <ColorOption $gradient={t.gradient} key={index} onClick={() => changeTheme(t.value)} $isSelected={theme === t.value}/>
                 ))}
             </ColorOptionContainer>
         </DisplayOptionsContainer>

@@ -98,7 +98,7 @@ const WorksSection = forwardRef((props, ref) => {
       <span><LightBulbOutlined/><h2>My Work</h2></span>
       {projects.map((project) => (
         <ProjectCard key={project.id} id={`project-`+ project.id}>
-            <ImageContainer imagePosition={project.imagePosition}>
+            <ImageContainer $imagePosition={project.imagePosition}>
               <ProgressiveImage
                 lowSrc={project.imagePlaceholder}
                 highSrc={project.imageUrl}

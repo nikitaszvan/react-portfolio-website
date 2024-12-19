@@ -195,7 +195,7 @@ export const IconContainer = styled.div`
     }
 `
 
-export const ImageContainer = styled.div<{isVisible: boolean}>`
+export const ImageContainer = styled.div<{$isVisible: boolean}>`
     position: absolute;
     top: 100%;
     left: 50%;
@@ -205,11 +205,11 @@ export const ImageContainer = styled.div<{isVisible: boolean}>`
     gap: 0.5rem;
     z-index: 3;
 
-    opacity: ${(props) => (props.isVisible ? 1 : 0)};
-    transform: ${(props) => (props.isVisible ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(-1rem)')};
+    opacity: ${({$isVisible}) => $isVisible ? 1 : 0};
+    transform: ${({$isVisible}) => $isVisible ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(-1rem)'};
 
     @media (max-width: 767px) {
-        ${(props) => (!props.isVisible && 'z-index: -5')};
+        ${({$isVisible}) => $isVisible && 'z-index: -5'};
     }
 
     > div {

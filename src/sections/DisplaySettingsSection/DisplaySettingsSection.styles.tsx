@@ -67,39 +67,38 @@ export const DropdownMenu = styled.div`
     z-index: 10;
 
     > ul {
-        width: 100%;
         height: 100%;
         padding: 0;
         margin: 0;
     } 
 `
 
-export const StyledThemeOption = styled.li<{ isBolded: boolean }>`
+export const StyledThemeOption = styled.li<{ $isBolded: boolean }>`
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    ${(props => props.isBolded && 'font-weight: 700;')}
+    ${({$isBolded}) => $isBolded && 'font-weight: 600;'}
     
     &:hover {
         background-color: var(--base-color);
     }
 `
 
-export const BlackCircle = styled.div<{ isSelected: boolean }>`
+export const BlackCircle = styled.div<{ $isSelected: boolean }>`
     width: 0.4rem;
     height: 0.4rem;
-    background-color: ${(props => props.isSelected ? 'var(--black)' : 'transparent')};
+    background-color: ${({$isSelected}) => $isSelected ? 'var(--black)' : 'transparent'};
     border-radius: 50%;
 `
 
-export const GradientCircle = styled.div<{gradient: string[]}>`
+export const GradientCircle = styled.div<{$gradient: string[]}>`
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    ${(props => props.gradient &&
-    `background: linear-gradient(to bottom right, ${(props.gradient[0])} 0%, ${props.gradient[1]} 15%, ${props.gradient[2]} 60%)`)};
+    ${({$gradient}) => $gradient &&
+    `background: linear-gradient(to bottom right, ${$gradient[0]} 0%, ${$gradient[1]} 15%, ${$gradient[2]} 60%)`};
     
 `
 

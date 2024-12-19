@@ -96,14 +96,14 @@ const AboutMeSection = forwardRef((props, ref) => {
         <StyledAboutMeSection id="about" ref={ref}>
             <span><LightingOutline/><h2>Development Skills</h2></span>
             {techStacks.map((stack, index) => (
-                <TechStackContainer>
-                    <TechStackHeader isExpanded={expandedStack === index} onClick={() => setExpandedStack(expandedStack === index ? null : index)}>
+                <TechStackContainer key={index}>
+                    <TechStackHeader $isExpanded={expandedStack === index} onClick={() => setExpandedStack(expandedStack === index ? null : index)}>
                         <h3>{stack.name}</h3>
-                        <TechStackIcon isExpanded={expandedStack === index}>
+                        <TechStackIcon $isExpanded={expandedStack === index}>
                             {stack.icon}
                         </TechStackIcon>  
                         <ToggleDetailsButton>
-                            <StyledChevronRight isExpanded={expandedStack === index}/>
+                            <StyledChevronRight $isExpanded={expandedStack === index}/>
                         </ToggleDetailsButton>
                     </TechStackHeader>
                     {expandedStack === index && (
@@ -111,7 +111,7 @@ const AboutMeSection = forwardRef((props, ref) => {
                         {stack.description}
                     </StackDescription>
                     )}
-                    <TagsContainer isHovered={hoveredStack === index}>
+                    <TagsContainer $isHovered={hoveredStack === index}>
                         {stack.technologies.map((tech, techIndex) => (
                             <StyledLink 
                                 to={tech.link} 

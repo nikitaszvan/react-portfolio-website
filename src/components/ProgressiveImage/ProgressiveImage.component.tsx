@@ -19,7 +19,7 @@ const ProgressiveImage = ({ lowSrc, highSrc, alt }) => {
     <StyledProgressiveImage
       src={src}
       alt={alt}
-      isLoading = {isLoading}
+      $isLoading = {isLoading}
     />
   );
 };

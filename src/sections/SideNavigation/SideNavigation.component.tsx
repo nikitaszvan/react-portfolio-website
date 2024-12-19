@@ -57,8 +57,7 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ sectionRefs }) => {
                 <NavLink 
                   key={index} 
                   to={`#${link}`} 
-                  isActive={activeSection === link.toLowerCase()}
-                  activeIndex={activeSection}
+                  $isActive={activeSection === link.toLowerCase()}
                   onClick={() => scrollToSection(`${link.toLowerCase()}`)}
                 >
                   {link} 
