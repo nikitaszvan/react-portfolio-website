@@ -46,7 +46,7 @@ export const ProjectCard = styled.div`
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 `
 
-export const ImageContainer = styled.div<{imagePosition: string}>`
+export const ImageContainer = styled.div<{$imagePosition: string}>`
     width: 100%;
     height: 20rem;
     margin-bottom: 1rem;
@@ -56,7 +56,7 @@ export const ImageContainer = styled.div<{imagePosition: string}>`
 
     > img {
         object-fit: cover;
-        ${({imagePosition}) => imagePosition && `object-position: ${imagePosition}`};
+        ${({$imagePosition}) => $imagePosition && `object-position: ${$imagePosition}`};
         width: 100%;
         height: 100%;
         opacity: 1;

@@ -104,8 +104,7 @@ const DisplaySettingsSection = () => {
           <DropdownMenu>
             <ul>
                 {themes.map((t) => (
-                    <>
-                    
+                    <> 
                     <StyledThemeOption
                         key={t.value}
                         onClick={() => changeTheme(t.value)}
