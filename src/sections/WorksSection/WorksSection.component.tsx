@@ -19,6 +19,7 @@ import CitizenshipWeb from "src/assets/images/citizenship-web.png";
 import CitizenshipWebPlaceholder from "src/assets/images/citizenship-web-placeholder.png";
 import SchoolPortal from "src/assets/images/school-portal.png";
 import SchoolPortalPlaceholder from "src/assets/images/school-portal-placeholder.png";
+import ValerieWeb from "src/assets/images/valerie.png";
 
 import { ReactComponent as ExpandIcon } from "src/assets/svgs/ExpandIcon.svg";
 import { ReactComponent as GitHubOutline } from "src/assets/svgs/GitHubOutline.svg";
@@ -34,11 +35,23 @@ type Project = {
   imagePlaceholder: string;
   imagePosition: string;
   technologies: string[];
-  liveUrl?: string;
+  liveUrl: string;
   githubUrl?: string;
 }
 
 const projects: Project[] = [
+  {
+    id: 0,
+    title: "Men's Streetwear eCommerce Platform",
+    description: <p>A modern men's streetwear eCommerce platform built with Next.js for fast and scalable performance, styled using Tailwind CSS for a sleek, responsive design, and integrated with Stripe for secure and seamless payment processing.</p>,
+    longDescription: "A modern men's streetwear eCommerce platform built with Next.js for fast performance, Tailwind CSS for a sleek, responsive design, and Stripe for secure payments. It utilizes IndexedDB for cart state, Redis for fast session storage, and Redux for efficient state management. DynamoDB powers scalable database operations, ensuring seamless data handling. The platform delivers a high-performance, user-friendly shopping experience with dynamic routing, server-side rendering, and smooth transactions, making it an ideal solution for online streetwear retailers. Combining modern frameworks and technologies, it offers a visually appealing, scalable, and optimized eCommerce experience across all devices.",
+    imageUrl: ValerieWeb,
+    imagePlaceholder: ValerieWeb,
+    imagePosition: "bottom",
+    technologies: ["React", "Next.js", "Redis", "TypeScript", "Vercel Hosting", "DynamoDB", "Redux", "Tailwind", "shadcn/ui"],
+    liveUrl: "https://nextjs-streetwear-ecommerce.vercel.app",
+    githubUrl: "https://github.com/nikitaszvan/nextjs-streetwear-ecommerce"
+  },
   {
     id: 1,
     title: "Innolab: Hackathon Suite",
@@ -74,7 +87,7 @@ const projects: Project[] = [
     technologies: ["React", "Typescript", "Firestore Database", "Firebase Hosting", "Firebase Auth", "Redux", "styled-components", "Figma"],
     liveUrl: "https://real-estate-project-356e9.web.app",
     githubUrl: "https://github.com/nikitaszvan/online-learning-portal"
-  }
+  },
 ]
 
 const WorksSection = forwardRef((props, ref) => {
@@ -109,7 +122,7 @@ const WorksSection = forwardRef((props, ref) => {
               >
                 <ExpandVector />
               </button>
-              <Dialog isOpen={isImageOpen} onClose={() => setIsImageOpen(false)} title={null}>
+              <Dialog isOpen={isImageOpen} onClose={() => setIsImageOpen(false)} title={null} image>
               {selectedImage && (
                 <img src={selectedImage.src} alt={selectedImage.alt} />
               )}
@@ -139,6 +152,7 @@ const WorksSection = forwardRef((props, ref) => {
                     isOpen={isDialogOpen}
                     onClose={() => setIsDialogOpen(false)}
                     title={selectedProject?.title}
+                    image={false}
                 >
                     <p>{selectedProject?.longDescription}</p>
                 </Dialog>
