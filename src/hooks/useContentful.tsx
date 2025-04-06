@@ -1,27 +1,14 @@
 import { createClient } from "contentful";
 
-type ContentfulLogoAssetType = {
-    fields: [key: string];
-}
-
 const useContentful = () => {
     const client = createClient({
-        space: '77tlwwxcrwns',
-        environment: 'master',
-        accessToken: '-vZ8zutP1JE0gQc28-xCZuZ_B9k3rbAOAP094HsOIco'
+        space: process.env.CONTENTFUL_SPACE_ID,
+        environment: process.env.CONTENTFUL_ENVIRONMENT,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
     });
-
-    // client.getEntry('7ff6JA7gOOBiheu6z45pzL')
-    // .then((entry) => console.log(entry))
-    // .catch(console.error);
 
     const getJobHistories = async () => {
         try {
-            // const entries = await client.getEntries({
-            //     content_type: "jobHistory",
-            //     // select: "fields"
-            // });
-
             const entries = await client.getEntries();
 
             const sanitizedEntries = entries.items.map((item) => {

@@ -186,11 +186,6 @@ export const IconContainer = styled.div`
         width: 3rem;
         height: 3rem;
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-        // @media (max-width: 767px) {
-        //     width: 4rem;
-        //     height: 4rem;
-        // }
         fill: var(--black);
     }
 `
