@@ -160,7 +160,6 @@ const TestimonialsSection = forwardRef((props, ref) => {
                 if (carouselRef.current) {
                   if (index !== 0) {
                     carouselRef.current.scrollLeft = ((index * 476) - (carouselRef.current.offsetWidth / 5));
-                    console.log(carouselRef);
                   }
                   else {
                     carouselRef.current.scrollLeft = 0;
