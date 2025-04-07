@@ -1,10 +1,11 @@
 import { createClient } from "contentful";
 
 const useContentful = () => {
+    console.log(process.env.REACT_APP_CONTENTFUL_SPACE_ID, process.env.REACT_APP_CONTENTFUL_ENVIRONMENT, process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN);
     const client = createClient({
-        space: process.env.CONTENTFUL_SPACE_ID,
-        environment: process.env.CONTENTFUL_ENVIRONMENT,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+        space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
+        environment: process.env.REACT_APP_CONTENTFUL_ENVIRONMENT,
+        accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN
     });
 
     const getJobHistories = async () => {
