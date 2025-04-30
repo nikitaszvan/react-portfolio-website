@@ -91,7 +91,7 @@ const useContentful = () => {
 
     const getJobHistories = async () => {
         try {
-            const entries = await client.getEntries<EntrySkeletonType>();
+            const entries = await client.getEntries<EntrySkeletonType>({ content_type: "portfolioNikitaVan" });
 
             const sanitizedEntries: SanitizedContentfulEntries[] = entries.items.map((item) => {
                 const { company, keyContributions, outcome, period, title } = item.fields;
