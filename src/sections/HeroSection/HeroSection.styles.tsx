@@ -129,10 +129,10 @@ export const HeroTextContainer = styled.div`
 
             &::before {
                 @media (min-width: 566px) {
-                    content: "a front-end developer.";
+                    content: "a full-stack developer.";
                 }
                 
-                content: "a front-end";
+                content: "a full-stack";
             }
 
             &::after {
