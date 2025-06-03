@@ -85,7 +85,7 @@ const projects: Project[] = [
     imagePlaceholder: SchoolPortalPlaceholder,
     imagePosition: "center",
     technologies: ["React", "Typescript", "Firestore Database", "Firebase Hosting", "Firebase Auth", "Redux", "styled-components", "Figma"],
-    liveUrl: "https://real-estate-project-356e9.web.app",
+    liveUrl: "https://online-learning-portal-mauve.vercel.app",
     githubUrl: "https://github.com/nikitaszvan/online-learning-portal"
   },
 ]
