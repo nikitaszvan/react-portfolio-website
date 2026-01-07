@@ -67,13 +67,13 @@ const projects: Project[] = [
   {
     id: 2,
     title: "Canadian Citizenship Test: Web Edition",
-    description: <><p>The Canadian Citizenship Test is a web-based extension of the widely used mobile app of the same name, delivering a unified test preparation experience across multiple devices. It features the same standardized content, enabling prospective citizens to access and study the material.</p><p>**The web application is currently undergoing redevelopment**</p></>,
+    description: <p>The Canadian Citizenship Test is a web-based extension of the widely used mobile app of the same name, delivering a unified test preparation experience across multiple devices. It features the same standardized content, enabling prospective citizens to access and study the material.</p>,
     longDescription: "Built on the success of the highly rated mobile version, this web application provides interactive learning tools and practice tests to help users prepare for the Canadian citizenship test. Featuring a user-friendly interface, the app brings essential study resources to the web while maintaining the design and functionality that contributed to the mobile app's ranking in the top 10 of Canada's Education & Learning category.",
     imageUrl: CitizenshipWeb,
     imagePlaceholder: CitizenshipWebPlaceholder,
     imagePosition: "top",
     technologies: ["Javascript", "HTML", "CSS", "Firestore Database"],
-    liveUrl: "",
+    liveUrl: "https://citizenshipapp.ca/content",
     githubUrl: ""
   },
   {
